@@ -1,0 +1,30 @@
+{
+  "notifications": {
+    "onboardingCompleted": "Onboarding was successfully completed",
+    "usersWillBeAdded": "{{count}} User will be added after an email confirmation",
+    "usersWillBeAdded_many": "{{count}} Users will be added after an email confirmation",
+    "usersWillBeAdded_one": "{{count}} User will be added after an email confirmation",
+    "usersWillBeAdded_other": "{{count}} Users will be added after an email confirmation"
+  },
+  "onboarding": {
+    "addUser": "Add user",
+    "delegate": "Delegate",
+    "edit": "Edit",
+    "editUser": "Edit user",
+    "finishOnboarding": "Finish onboarding",
+    "submit": "Submit",
+    "subtitle": "You must assign at least one (or more) users the following roles",
+    "title": "Manage and invite colleagues to join Caropticom",
+    "validationMessage": "You are about to finish onboarding without adding any users in {{roles}} roles. Without adding them, some services (e.g. Optipix) will not be available. Do you want to proceed without adding users?",
+    "validationMessage_many": "You are about to finish onboarding without adding any users in {{roles}} roles. Without adding them, some services (e.g. Optipix) will not be available. Do you want to proceed without adding users?",
+    "validationMessage_one": "You are about to finish onboarding without adding any users in {{roles}} role. Without adding them, some services (e.g. Optipix) will not be available. Do you want to proceed without adding users?",
+    "validationMessage_other": "You are about to finish onboarding without adding any users in {{roles}} roles. Without adding them, some services (e.g. Optipix) will not be available. Do you want to proceed without adding users?"
+  },
+  "onboardingUnfinished": {
+    "text": "In order to be able to enter the application please contact your platform admin",
+    "title": "Onboarding of your company into Caropticom has not been finished yet"
+  },
+  "users": {
+    "confirmUserRemove": "Are you sure you want to remove the user?"
+  }
+}

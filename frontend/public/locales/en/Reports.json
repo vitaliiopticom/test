@@ -1,0 +1,226 @@
+{
+  "audit": {
+    "optiads": {
+      "auditAndAdvice": {
+        "heading": "Audit and advice",
+        "text1": "Once the quality of the images and data is guaranteed, the road is clear for a high-quality ad. All essential data is transferred directly via automated interfaces to online portals and social media channels. Our system automatically models all the content to meet all the requirements of the sales platforms, thus guaranteeing optimal visibility.",
+        "text2": "All listings go through an internal process to ensure that the raw and enriched vehicle data is easily readable from",
+        "text3": "a marketing standpoint to the potential buyer behind their computer. Our algorithms make titles and content understandable to the end customer and remove any form of overly technical automotive language.",
+        "text4": "The more straightforward and transparent the formulation of an ad, the greater the chances of convincing the customer and getting a sale."
+      },
+      "auditPart1": "audit, part 1",
+      "auditReport": "AUDIT Report",
+      "contacts": "Contacts",
+      "createdOn": "Created on {{date}}",
+      "improvementRecommendations": {
+        "additionalInfo": "Additional info",
+        "description": "Description",
+        "heading": "Improvement recommendations",
+        "photo": "Photo",
+        "title": "Title"
+      },
+      "nationalAverage": "National Average",
+      "optiadsAuditScoring": "Opti(<span>ads</span>) Audit Scoring",
+      "optiadsExample": "Opti(<span>ads</span>) Example",
+      "ratings": {
+        "complements": "Complements",
+        "description": "Description",
+        "photo": "Photo",
+        "title": "Title",
+        "totalScore": "Total score"
+      },
+      "recommendationTags": {
+        "descriptionOfComplement": {
+          "checkpoints": "100 checkpoints",
+          "contactInfo": "Contact information",
+          "presentationOfCompany": "Presentation of the company",
+          "salesToB2b": "Sales to B2B (possibility of expanding its sales channels)",
+          "similarModels": "Similar models",
+          "socialMediaInvite": "Invitation to follow us on social networks",
+          "virtualPresentationProposal": "Proposal for virtual presentation of the vehicle. ",
+          "websiteInvite": "Invitation to visit our website"
+        },
+        "descriptionOfEquipment": {
+          "guaranteeExplanation": "Explanation of the guarantee",
+          "orderOfImportance": "Equipment classified by order of importance",
+          "tariffAdvantageExplanation": "Explanation for the calculation of the tariff advantage.  ",
+          "understandableTerms": "Equipment written in terms that are understandable to all"
+        },
+        "photo": {
+          "brandingLogo": "Branding (Logo)",
+          "companyColors": "Company colors",
+          "customizedCoverPhoto": "Customized cover photo",
+          "phoneNumber": "Phone number",
+          "priceAdvantages": "Price advantages",
+          "qrCode": "Q.R code"
+        },
+        "title": {
+          "characterNumOptimization": "Maximal character number optimization.",
+          "comprehensible": "Written in comprehensible terms",
+          "discountApplied": "Discount applied (in %)",
+          "equipmentSpecified": "Main equipment specified",
+          "subtitleAdditionalInfo": "Subtitle with additional information",
+          "titleOptimized": "Title optimized"
+        }
+      },
+      "thankYou": {
+        "text1": "Thank you",
+        "text2": "for Your Attention!"
+      }
+    },
+    "optileads": {
+      "aboutOptileadsService": "About <span>(</span>opti<span>)leads</span>! service",
+      "aboutOptileadsServiceText": "In our system, all leads are <span>centrally converged in real time</span> to ensure that no request goes unanswered. the advantage lies in the response time. We guarantee a maximum response time of 30 minutes per lead with daily coverage from 8:00 a.m. to 10:00 p.m., including weekends and bank Holiday.",
+      "auditPart1": "Audit, part 1",
+      "auditReport": "Audit Report",
+      "contactUs": "Contact us",
+      "createdOn": "Created on",
+      "leadManagementBestPractices": "Lead management: Best practices",
+      "mysteryLeadsBusinessDay": "Mystery lead: Business day",
+      "mysteryLeadsBusinessNight": "Mystery lead: Business night",
+      "mysteryLeadsPublicHoliday": "Mystery lead: Public holiday",
+      "mysteryLeadsWeekend": "Mystery lead: Weekend",
+      "nationalAverage": "National Average",
+      "optiLeads": "(opti)Leads!",
+      "optileadsAuditScoring": "<span>(</span>opti<span>)leads</span>! audit scoring",
+      "quality": "Quality:",
+      "qualityOfRespons": {
+        "applicant": "Applicant:",
+        "didYouKnow": "Did you know if the lead was not answered within 30 min - it can be considered as a lost sale",
+        "forbes": "Forbes",
+        "noResponse": "No response",
+        "openScreenshot": "Open the screenshot",
+        "overdue": "Overdue",
+        "platform": "Platform",
+        "reminder2Days": "Reminder in 2 Days",
+        "reminder4Days": "Reminder in 4 Days",
+        "request": "Request:",
+        "response": "Response"
+      },
+      "qualityOfResponse": "Quality of response",
+      "ratings": {
+        "businessDay": "Business day",
+        "businessNight": "Business night",
+        "onTime": "On time",
+        "outOfTime": "Out of time",
+        "publicHoliday": "Public holiday",
+        "totalScore": "Total score",
+        "Weekend": "Weekend"
+      },
+      "reminders": "Reminders",
+      "thankYou": {
+        "text": "Thank you for your attention !"
+      },
+      "time": "Time: "
+    },
+    "optipix": {
+      "360deg": "360°",
+      "actualRendering": "Actual rendering",
+      "after": "AFTER",
+      "aiFeatures": "AI FEATURES",
+      "antiReflectiveBodywork": "Anti-reflective (bodywork)",
+      "auditAndAdvice": "AUDIT AND ADVICE",
+      "auditAndAdviceTexts": {
+        "text1": "Transparency is an important part of any partnership. Therefore, the first step is to analyze your current situation.\r\n An experienced team verifies your online presence taking into account four essential points:",
+        "text2": "This first diagnosis is then presented to you during an advisory meeting and the second part of the audit is completed with you. The end result establishes <span>the starting point</span> for a potential collaboration, as well as clear Kpis to serve as the basis for evaluating the results in the months to come. After receiving this report, you can freely decide which services and software you want to use. Then, <span>a common strategy</span> will be defined and <span>clear objectives</span> are set.\n Often <span>an exterior view</span> of one's own business is very valuable, because in everyday work the point of view is often different or routine sets in. Thus, the audit is by no means a chain of criticism, but an objective analysis of different points on which the success of digitization can be assessed. All results are justified and supported by concrete examples."
+      },
+      "auditPart1": "AUDIT, Part 1.",
+      "before": "BEFORE",
+      "branding": "Branding",
+      "brandingIncluded": "Branding Included",
+      "brandLogo": "Brand / logo",
+      "brightness": "Brightness",
+      "card1": {
+        "description": "When the vehicle is pulled over in an inappropriate place:",
+        "examples": "Examples*: Vacant land, Visibility of the community (building, street, passerby...), Unorganized stockyard,...",
+        "title": "Constraints related to the place where the photos were taken"
+      },
+      "card2": {
+        "description": "When it has several storage locations or areas that are difficult to access:",
+        "examples": "Examples*: Organize the movement of the vehicle, Find where the vehicle is, Move several vehicles to pass, ...",
+        "title": "Constraints related to the operating site"
+      },
+      "card3": {
+        "description": "When the order of photos is never the same with little logic:",
+        "examples": "Examples*: Photo outdoors then indoors and again outdoors, Move the vehicle for each photo, ...",
+        "title": "Current Photo Sequence Constraints"
+      },
+      "castShadows": "Cast shadows",
+      "cleanlines": "CLEANLINESS",
+      "cleanliness": "CLEANLINESS",
+      "contacts": "CONTACTS",
+      "custom3dBox": "Custom 3D Box",
+      "customBranding": "CUSTOM BRANDING",
+      "customPhotobox": "CUSTOM PHOTOBOX 3D",
+      "damageCorrection": "Damage Correction",
+      "damageDetection": "Damage detection",
+      "descriptionPhotos": "Description photos",
+      "detailedEquipment": "Detailed equipment",
+      "differentEnvironment": "Different Environment",
+      "environment": "ENVIRONMENT",
+      "estimatedHiddenCosts": "ESTIMATED HIDDEN COSTS",
+      "framing": "Framing",
+      "fromAnotherSide": "Photos from another side",
+      "fromOneSide": "Photos from one side",
+      "guidelinePdf": "Guideline",
+      "harmonyAndGeneralPresentation": "HARMONY AND GENERAL PRESENTATION",
+      "harmonyOfPresentation": "Harmony of presentation",
+      "hiddenCosts": "Hidden Costs",
+      "imageOptimalization": "IMAGE OPTIMIZATION (3 IN 1)",
+      "immediateUse": "Immediate use without specialist knowledge",
+      "initialDiagnostic": "INITIAL DIAGNOSTIC",
+      "licensePlateCover": "License plate cover",
+      "mysteryLeads": "Mystery Leads",
+      "nationalAverage": "National Average",
+      "new360virtual": "NEW 360° VIRTUAL",
+      "noInvestment": "No Investment",
+      "onlineGlobalPresence": "Online global Presence",
+      "onRequest": "* On Request",
+      "openPhotos": "Open photo in browser",
+      "optimizedProcess": "Optimized process",
+      "optipixSlideText": "<span>The visual elements</span> determine the <span>first online impression</span>. They are especially decisive when selling via one or more marketplaces. The customer is overwhelmed with\ncountless product lines and loses the big picture. This is why it is very important that each ad contains real, quality and attractive photos. Here are some basic points to observe:",
+      "personalizedBranding": "Personalized Branding",
+      "photoQuality": "Photo Quality",
+      "photosReprocessed": "15 PHOTOS REPROCESSED TO CONVINCE",
+      "phototek": "PHOTOTEK",
+      "phototekText1": "You can still access all of your photos in the media library. (Opti)Content stores original and edited photos. The database belongs to you and you can easily find your media content.",
+      "phototekText2": "If desired, the database can be connected to your DMS/CRM/ERP via an API*.",
+      "plug&play": "PLUG & PLAY PHOTO APP",
+      "polish": "Polish",
+      "processOptimalization": "PROCESS OPTIMIZATION",
+      "processOptimalizationBottomRightText": "<span>Optipix</span> is a simple APP that allows you to completely photograph a car in <span>15 minutes</span> without the need to have any<span>photography knowledge</span>. From database to live in no time. No investment is necessary (no photo studio with energy-consuming light installations, no tunnel) and no large areas are occupied.",
+      "processOptimalizationText": "The <span>photographic process</span> at the dealership is often not optimally coordinated and it can take days or weeks before a vehicle is finally posted online with photos.",
+      "processOptimalizationTopRightText": "This results in lost sales opportunities, devaluation and slower inventory turnover. As a rule, a car is also fully prepared before being photographed. At this time, it is not yet known whether the vehicle will be sold to an end customer or to a dealer. This is why sometimes too much unnecessary effort is spent on preparation, which lowers the margin. Moreover, the whole process is <span>very time consuming and inefficient</span>.",
+      "productPresentationAndFeatureLine1": "PRODUCT PRESENTATION",
+      "productPresentationAndFeatureLine2": "& FEATURES",
+      "quickImplementation": "Quick Implementation",
+      "realAndQualitativeRendering": "REAL AND QUALITATIVE RENDERING",
+      "realism": "Realism",
+      "reflections": "REFLECTIONS",
+      "renderingComparison": {
+        "groundReflections": "GROUND REFLECTIONS",
+        "polishRims": "POLISH RIMS",
+        "polishVarnish": "POLISH VARNISH"
+      },
+      "reportPart1": "AUDIT Report Part 1.",
+      "rimsGroundReflections": "Rims (ground reflections)",
+      "scalingOrientation": "SCALING / ORIENTATION",
+      "scoring": "AUDIT PART 1. SCORING",
+      "seriesOfPhotos": "Series of Photos",
+      "solutionOptipix": "SOLUTION (OPTI)PIX",
+      "spaceSaving": "Space saving",
+      "standardBrand": "Standard brand implementation",
+      "thankYouLine1": "THANK YOU",
+      "thankYouLine2": "FOR YOUR ATTENTION!",
+      "totalScore": "Total score",
+      "vehiclePhoto": "Vehicle photo",
+      "vinRecognition": "VIN NUMBER RECOGNITION",
+      "vinRecognitionText": {
+        "text1": "The APP recognizes the vehicle identification number (VIN).",
+        "text2": "The <span>artificial intelligence</span> automatically assigns the sequence of photos to the correct folder in the vehicle. There is no need to download, save or sort images. No desktop folders and no data loss.",
+        "text3": "<span>Synchronization</span> between app and library happens automatically.",
+        "text4": "It is possible to use our European configurator Opti(Config), which determines the exact equipment of your cars and summarizes it automatically <span>in a sales file</span>."
+      }
+    }
+  }
+}

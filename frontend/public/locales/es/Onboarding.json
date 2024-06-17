@@ -1,0 +1,24 @@
+{
+  "notifications": {
+    "onboardingCompleted": "El Onboarding se completó con éxito",
+    "usersWillBeAdded_many": "{{count}} Los usuarios se agregarán después de una confirmación por correo electrónico",
+    "usersWillBeAdded_one": "{{count}} El usuario se agregará después de una confirmación por correo electrónico",
+    "usersWillBeAdded_other": "{{count}} Los usuarios se agregarán después de una confirmación por correo electrónico"
+  },
+  "onboarding": {
+    "addUser": "Añadir un usuario",
+    "delegate": "Delegar",
+    "editUser": "Editar usuario",
+    "finishOnboarding": "Finalizar incorporación",
+    "submit": "Enviar",
+    "subtitle": "Debes asignar al menos a uno (o más) usuarios los siguientes roles",
+    "title": "Administre e invite a colegas a unirse a Caropticom",
+    "validationMessage": "Está a punto de finalizar la incorporación sin agregar ningún usuario en {{roles}} papeles Sin agregarlos, algunos servicios (por ejemplo, Optipix) no estarán disponibles. ¿Desea continuar sin agregar usuarios?",
+    "validationMessage_many": "Está a punto de finalizar la incorporación sin agregar ningún usuario en {{roles}} papeles Sin agregarlos, algunos servicios (por ejemplo, Optipix) no estarán disponibles. ¿Desea continuar sin agregar usuarios?",
+    "validationMessage_one": "Está a punto de finalizar la incorporación sin agregar ningún usuario en {{roles}} role. Sin agregarlos, algunos servicios (por ejemplo, Optipix) no estarán disponibles. ¿Desea continuar sin agregar usuarios?",
+    "validationMessage_other": "Está a punto de finalizar la incorporación sin agregar ningún usuario en {{roles}} papeles Sin agregarlos, algunos servicios (por ejemplo, Optipix) no estarán disponibles. ¿Desea continuar sin agregar usuarios?"
+  },
+  "users": {
+    "confirmUserRemove": "¿Está seguro de que desea eliminar este usuario?"
+  }
+}

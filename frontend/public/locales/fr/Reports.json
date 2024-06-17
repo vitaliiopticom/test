@@ -1,0 +1,140 @@
+{
+  "audit": {
+    "optiads": {
+      "nationalAverage": "Benchmark national",
+      "recommendationTags": {
+        "descriptionOfComplement": {
+          "checkpoints": "100 points de contrôle",
+          "presentationOfCompany": "Présentation de l'entreprise",
+          "similarModels": "Modèles similaires"
+        },
+        "descriptionOfEquipment": {
+          "guaranteeExplanation": "Explication de la garantie",
+          "orderOfImportance": "Équipements classés par ordre d'importance"
+        }
+      },
+      "thankYou": {
+        "text1": "Merci",
+        "text2": "pour votre attention !"
+      }
+    },
+    "optileads": {
+      "contactUs": "Contactez nous",
+      "nationalAverage": "Moyenne nationale",
+      "optiLeads": "(opti)Leads!",
+      "qualityOfRespons": {
+        "noResponse": "Sans réponse"
+      },
+      "qualityOfResponse": "Qualité de la réponse"
+    },
+    "optipix": {
+      "360deg": "360°",
+      "actualRendering": "Rendu réel",
+      "after": "APRÈS",
+      "aiFeatures": "Fonctionnalités d'IA",
+      "antiReflectiveBodywork": "Antireflet (carrosserie)",
+      "auditAndAdvice": "AUDIT ET CONSEIL",
+      "auditAndAdviceTexts": {
+        "text1": "La transparence est un élément important de tout partenariat. Par conséquent, la première étape consiste à analyser votre situation actuelle.\r\n Une équipe expérimentée vérifie votre présence en ligne en tenant compte de quatre points essentiels :",
+        "text2": "Ce premier diagnostic vous est ensuite présenté lors d'un entretien conseil et la seconde partie de l'audit est réalisée avec vous. Le résultat final établit <span>le point de départ</span> pour une éventuelle collaboration, ainsi que des Kpis clairs pour servir de base à l'évaluation des résultats dans les mois à venir. Après avoir reçu ce rapport, vous pouvez librement décider quels services et logiciels vous souhaitez utiliser. Alors, <span>une stratégie commune</span> seront définis et <span>des objectifs clairs</span> sont définis.\n Souvent <span>une vue extérieure</span> de sa propre entreprise est très précieux, car dans le travail quotidien, le point de vue est souvent différent ou la routine s'installe. Ainsi, l'audit n'est en aucun cas une chaîne de critiques, mais une analyse objective des différents points sur lesquels le succès de la numérisation peut être évalué. Tous les résultats sont justifiés et étayés par des exemples concrets."
+      },
+      "auditPart1": "AUDIT, Partie 1.",
+      "before": "AVANT",
+      "branding": "Branding",
+      "brandingIncluded": "Branding inclus",
+      "brandLogo": "Logo de la marque",
+      "brightness": "Luminosité",
+      "card1": {
+        "description": "Lorsque le véhicule est garé dans un endroit inapproprié :",
+        "examples": "Exemples* : Terrain vague, Visibilité de la communauté (bâtiment, rue, passant...), Parc de stockage non organisé,...",
+        "title": "Contraintes liées au lieu où les photos ont été prises"
+      },
+      "card2": {
+        "description": "Lorsqu'il dispose de plusieurs emplacements de stockage ou de zones difficiles d'accès :",
+        "examples": "Exemples* : Organiser le déplacement du véhicule, Rechercher où se trouve le véhicule, Déplacer plusieurs véhicules pour passer, ...",
+        "title": "Contraintes liées au site d'exploitation"
+      },
+      "card3": {
+        "description": "Quand l'ordre des photos n'est jamais le même, avec peu de logique :",
+        "examples": "Exemples* : Photo extérieur puis intérieur et encore extérieur, Déplacer le véhicule à chaque photo, ...",
+        "title": "Contraintes actuelles de la séquence de photos"
+      },
+      "castShadows": "Ombres portées",
+      "cleanlines": "Propreté",
+      "cleanliness": "Propreté",
+      "contacts": "CONTACTS",
+      "custom3dBox": "Photobox 3D personnalisé",
+      "customBranding": "image de marque personnalisée",
+      "customPhotobox": "Photobox personnalisé 3D",
+      "damageCorrection": "Correction des dommages",
+      "damageDetection": "Détection des dommages",
+      "descriptionPhotos": "Description des photos",
+      "detailedEquipment": "Équipements détaillés",
+      "differentEnvironment": "Environnement différent",
+      "environment": "Environnement",
+      "estimatedHiddenCosts": "Coûts cachés estimés",
+      "framing": "Cadrage",
+      "fromAnotherSide": "Des photos d'un autre côté",
+      "fromOneSide": "Photos d'un côté",
+      "guidelinePdf": "Guide ",
+      "harmonyAndGeneralPresentation": "Harmonie et présentation générale",
+      "harmonyOfPresentation": "Harmonie de présentation",
+      "hiddenCosts": "Coûts cachés",
+      "imageOptimalization": "optimisation d'image (3 en 1)",
+      "immediateUse": "Utilisation immédiate sans connaissances spécialisées",
+      "initialDiagnostic": "DIAGNOSTIC INITIAL",
+      "licensePlateCover": "Cache plaque d'immatriculation",
+      "mysteryLeads": "Demandes mystères",
+      "nationalAverage": "Benchmark national",
+      "new360virtual": "NOUVEAU 360º VIRTUEL ",
+      "noInvestment": "Aucun investissement",
+      "onlineGlobalPresence": "Présence en ligne globale",
+      "onRequest": "* Sur demande",
+      "openPhotos": "Ouvrir les photos",
+      "optimizedProcess": "Processus optimisé",
+      "optipixSlideText": "<span>Les éléments visuels</span> déterminent la <span>première impression online</span>. Ils sont sutout décisifs lors de la vente via une ou plusieurs marketplaces. Le client est submergé par\nd'innombrables lignes de produits et perd la vision globale. C'est pourquoi il est très important que chaque annonce contienne de vraies photos de qualité et attrayantes. Voici quelques points fondamentaux à respecter :",
+      "personalizedBranding": "Image de marque personnalisée",
+      "photoQuality": "La qualité de la photo",
+      "photosReprocessed": "15 PHOTOS RETRAITÉES POUR CONVAINCRE",
+      "phototek": "Phototek",
+      "phototekText1": "Vous pouvez toujours accéder à toutes vos photos dans la médiathèque. (Opti)Content stocke les photos originales et modifiées. La base de données vous appartient et vous pouvez facilement retrouver votre contenu média.",
+      "phototekText2": "Si vous le souhaitez, la base de données peut être connectée à votre DMS/CRM/ERP via une API*.",
+      "plug&play": "APPLICATION PHOTO PLUG & PLAY",
+      "polish": "Polish",
+      "processOptimalization": "optimisation des processus",
+      "processOptimalizationBottomRightText": "<span>Optipix</span> est une application simple qui vous permet de photographier complètement une voiture en <span>15 minutes</span> sans avoir besoin d'avoir de <span>connaissances en photographie</span>. De la base de données à la mise en ligne en un rien de temps. Aucun investissement n'est nécessaire (pas de studio photo avec des installations lumineuses énergivores, pas de tunnel) et pas d'espace perdu (pas de grande superficie occupée).",
+      "processOptimalizationText": "Le <span>processus photographique</span> chez le concessionnaire n'est souvent pas coordonné de manière optimale et cela peut prendre des jours ou des semaines avant qu'un véhicule ne soit finalement mis en ligne avec des photos.",
+      "processOptimalizationTopRightText": "Cela engendre une perte d'opportunités de vente, une dévalorisation et une rotation plus lente du stock. En règle générale, une voiture est également entièrement préparée avant d'être photographiée. A ce moment-là, on ne sait pas encore si le véhicule sera vendu à un client final ou à un concessionnaire. C'est pourquoi on consacre parfois trop d'efforts inutiles à la préparation, ce qui fait baisser la marge. De plus, l'ensemble du processus est <span>chronophage et inefficace</span>.",
+      "productPresentationAndFeatureLine1": "PRÉSENTATION DU PRODUIT",
+      "productPresentationAndFeatureLine2": "& CARACTÉRISTIQUES",
+      "quickImplementation": "Mise en œuvre rapide",
+      "realAndQualitativeRendering": "RENDU RÉEL ET QUALITATIF",
+      "realism": "Le réalisme",
+      "reflections": "Reflets",
+      "renderingComparison": {
+        "groundReflections": "REFLETS AU SOL",
+        "polishRims": "POLISH JANTES",
+        "polishVarnish": "POLISH VERNIS"
+      },
+      "reportPart1": "AUDIT Rapport Partie 1.",
+      "rimsGroundReflections": "Jantes (réflexions au sol)",
+      "scalingOrientation": "Echelle / Orientation",
+      "scoring": "AUDIT PARTIE 1. NOTATION",
+      "seriesOfPhotos": "Série de photos",
+      "solutionOptipix": "SOLUTION (OPTI)PIX",
+      "spaceSaving": "Economie d'espace",
+      "standardBrand": "Mise en œuvre standard de la marque",
+      "thankYouLine1": "MERCI",
+      "thankYouLine2": "POUR VOTRE ATTENTION!",
+      "totalScore": "Score total",
+      "vehiclePhoto": "Photo du véhicule",
+      "vinRecognition": "VIN Reconnaissance",
+      "vinRecognitionText": {
+        "text1": "L'APP reconnaît le numéro d'identification du véhicule (VIN).",
+        "text2": "L' <span>intelligence artificielle</span> assigne automatiquement la séquence de photos au bon dossier du véhicule. Il n'est pas nécessaire de télécharger, d'enregistrer ou de trier les images. Pas de dossiers sur le bureau et pas de perte de données.",
+        "text3": "La <span>Synchronisation</span> entre l'application et la bibliothèque se réalise automatiquement.",
+        "text4": "Il est possible d'utiliser notre configurateur européen Opti(Config), qui détermine l'équipement exact de vos voitures et le résume automatiquement <span>dans un dossier de vente</span>."
+      }
+    }
+  }
+}

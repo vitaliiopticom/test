@@ -1,0 +1,92 @@
+.rc_root {
+  @apply border-gray-40 p-3 text-secondary shadow-xl;
+}
+
+.rc_root .rc {
+  @apply w-[258px] !important;
+}
+
+.rc_header button:first-of-type:before {
+  @apply h-4 w-4 text-secondary-tint-40;
+  content: '<';
+}
+
+.rc_header button:last-of-type:before {
+  @apply h-4 w-4 text-secondary-tint-40;
+  content: '>';
+}
+
+.rc_header button:first-of-type span,
+.rc_header button:last-of-type span {
+  @apply hidden;
+}
+
+.rc_header_label span {
+  @apply text-base font-semibold text-secondary;
+}
+
+.rc_body {
+  @apply mt-2.5;
+}
+
+.rc_body-cell_value {
+  @apply mx-0 my-1;
+  @apply h-[30px] w-[30px] !important;
+}
+
+.rc_body ul {
+  @apply border-b-0;
+}
+
+.rc_body ul li {
+  @apply font-bold;
+}
+
+.rc_body-weekdays span {
+  @apply border-b-0 text-sm text-secondary-tint-40;
+}
+
+/* numbers*/
+
+.rc_body-days-of-month .rc_body-cell.rc_selected .rc_body-cell_value {
+  @apply bg-primary;
+}
+
+.rc_body-days-of-month .rc_body-cell.rc_selected .rc_body-cell_value button {
+  @apply text-white;
+}
+
+.rc_body-days-of-month .rc_body-cell.rc_active button {
+  @apply text-sm text-secondary-tint-40;
+}
+
+/* weekend numbers*/
+
+.rc_body-days-of-month .rc_body-cell.rc_selected.rc_wknd .rc_body-cell_value {
+  @apply bg-primary;
+}
+
+.rc_body-days-of-month .rc_body-cell.rc_wknd:not(.rc_active) button {
+  @apply text-gray-60;
+}
+
+/* range */
+
+.rc_body-days-of-month .rc_body-cell.rc_range_start .rc_body-cell_value button,
+.rc_body-days-of-month .rc_body-cell.rc_range_end .rc_body-cell_value button {
+  @apply text-white;
+}
+
+.rc_body-days-of-month .rc_body-cell.rc_in_range .rc_body-cell_value,
+.rc_body-days-of-month .rc_body-cell.rc_in_range.rc_wknd .rc_body-cell_value {
+  @apply bg-primary-tint-90;
+}
+
+.rc_body-days-of-month .rc_body-cell.rc_range_start .rc_body-cell_value,
+.rc_body-days-of-month .rc_body-cell.rc_range_end .rc_body-cell_value,
+.rc_body-days-of-month .rc_body-cell.rc_range_end.rc_wknd .rc_body-cell_value,
+.rc_body-days-of-month
+  .rc_body-cell.rc_range_start.rc_wknd
+  .rc_body-cell_value {
+  @apply bg-primary;
+}

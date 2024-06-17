@@ -1,0 +1,119 @@
+{
+  "audit": {
+    "optiads": {
+      "nationalAverage": "Benchmark nacional"
+    },
+    "optileads": {
+      "optiLeads": "(opti)Leads!"
+    },
+    "optipix": {
+      "360deg": "360°",
+      "actualRendering": "Representación real",
+      "after": "DESPUÉS",
+      "aiFeatures": "Funciones de la IA",
+      "antiReflectiveBodywork": "Antirreflejos (carrocería)",
+      "auditAndAdvice": "AUDITORÍA Y ASESORAMIENTO",
+      "auditAndAdviceTexts": {
+        "text1": "La transparencia es un elemento importante de cualquier asociación. Por eso, el primer paso es analizar su situación actual. Un équipo experimentado comprueba su presencia en línea teniendo en cuanta cuatro puntos clave.\r\n Un equipo experimentado verifica tu presencia online teniendo en cuenta cuatro puntos esenciales:",
+        "text2": "A continuación, se le presenta este primer diagnóstico durante una reunión de asesoramiento y se realiza con usted la segunda parte de la auditoría. El resultado final establece <span>el punto de partida</span> para una posible colaboración, así como unos Kpis claros que servirán de base para evaluar los resultados en los próximos meses. Tras recibir este informe, podrá decidir libremente qué servicios y software desea utilizar. \nA continuación, se definirá <span>una estrategia común</span> y se fijarán <span>objetivos claros</span>.                                                                                                                                                   \nA menudo <span>una visión externa</span> de la propia empresa es muy valiosa, porque en el trabajo diario el punto de vista suele ser diferente o se instala la rutina. Así, la auditoría no es en absoluto una cadena de críticas, sino un análisis objetivo de los distintos puntos en los que se puede evaluar el éxito de la digitalización. Todos los resultados se justifican y apoyan con ejemplos concretos."
+      },
+      "auditPart1": "AUDITORIA, Parte 1.",
+      "before": "ANTES",
+      "branding": "Branding",
+      "brandingIncluded": "Imagen de marca incluida",
+      "brandLogo": "Logotipo de la marca",
+      "brightness": "Luminosidad",
+      "card1": {
+        "description": "Cuando el vehículo está estacionado en un lugar inadecuado:",
+        "examples": "Ejemplos*: Terreno baldío, Visibilidad de la comunidad (edificio, calle, transeúnte...), Parque no organizado,...",
+        "title": "Restricciones relacionadas con el lugar donde se tomaron las fotos"
+      },
+      "card2": {
+        "description": "Cuando tenga varios lugares de almacenamiento o zonas de difícil acceso:",
+        "examples": "Ejemplos*: Organizar el movimiento del vehículo, Averiguar dónde está el vehículo, Mover varios vehículos para poder pasar, ...",
+        "title": "Restricciones relacionadas con el sitio de explotación"
+      },
+      "card3": {
+        "description": "Cuando el orden de las fotos nunca es el mismo, con poca lógica:",
+        "examples": "Ejemplos*: Foto del exterior, luego del interior y nuevamente del exterior, Mover el vehículo para cada foto, ...",
+        "title": "Restricciones actuales de la secuencia de fotos"
+      },
+      "castShadows": "Sombras ",
+      "cleanlines": "Limpieza",
+      "cleanliness": "Limpieza",
+      "contacts": "CONTACTOS",
+      "custom3dBox": "Fotobox 3D personalizado",
+      "customBranding": "Imagen de marca personalizada",
+      "customPhotobox": "Fotobox personalizado en 3D",
+      "damageCorrection": "Corrección de daños",
+      "damageDetection": "Detección de daños",
+      "descriptionPhotos": "Descripción de las fotos",
+      "detailedEquipment": "Equipamientos detallados",
+      "differentEnvironment": "Entorno diferente",
+      "environment": "Entorno",
+      "estimatedHiddenCosts": "Estimación de gastos ocultos",
+      "framing": "Encuadre",
+      "fromAnotherSide": "Fotos de otro lado",
+      "fromOneSide": "Fotos de un lado",
+      "guidelinePdf": "Guía",
+      "harmonyAndGeneralPresentation": "Armonía y presentación general",
+      "harmonyOfPresentation": "Armonía de la presentación",
+      "hiddenCosts": "Gastos ocultos",
+      "imageOptimalization": "optimización de imagen (3 en 1)",
+      "immediateUse": "Uso inmediato sin conocimientos especializados",
+      "initialDiagnostic": "DIAGNÓSTICO INICIAL",
+      "licensePlateCover": "Cubre matrícula",
+      "mysteryLeads": "Mystery shopping",
+      "nationalAverage": "Benchmark nacional",
+      "new360virtual": "NUEVO 360° VIRTUAL",
+      "noInvestment": "Sin inversión",
+      "onlineGlobalPresence": "Presencia en línea global",
+      "onRequest": "* Bajo petición",
+      "openPhotos": "Abrir fotos",
+      "optimizedProcess": "Proceso optimizado",
+      "optipixSlideText": "<span>Los elementos visuales</span> determinan la <span>primera impresión en línea</span>. Son especialmente decisivos cuando se vende a través de uno o varios marketplaces. \nEl cliente se ve sumergido por innumerables gamas de productos y pierde la visión de conjunto. Por eso es muy importante que cada anuncio contenga fotos reales, de alta calidad y atractivas. He aquí algunos puntos básicos a tener en cuenta:",
+      "personalizedBranding": "Imagen de marca personalizada",
+      "photoQuality": "Calidad fotográfica",
+      "photosReprocessed": "15 FOTOS REPROCESADAS PARA CONVENCER",
+      "phototek": "FOTOTECA",
+      "phototekText1": "Siempre puede acceder a todas sus fotos en la biblioteca multimedia. (Opti)Content almacena tanto las fotos originales como las modificadas. La base de datos le pertenece y puede encontrar fácilmente su contenido multimedia.",
+      "phototekText2": "Si lo desea, la base de datos se puede conectar a su DMS/CRM/ERP a través de una API*.",
+      "plug&play": "APLICACIÓN DE FOTOS PLUG & PLAY",
+      "polish": "Pulido ",
+      "processOptimalization": "optimización de procesos",
+      "processOptimalizationBottomRightText": "<span>Optipix</span> es una aplicación sencilla que le permite fotografiar completamente un coche en <span>15 minutos</span> sin necesidad de tener <span>conocimientos de fotografía</span>. De la base de datos a la publicación en muy poco tiempo. No se necesita inversión (ni estudio fotográfico con instalaciones de luz que consuman energía, ni túnel) ni se pierde espacio (por gran superficie ocupada).",
+      "processOptimalizationText": "El <span>proceso fotográfico</span> en el concesionario a menudo no está coordinado de forma óptima y pueden pasar días o semanas antes de que un vehículo esté finalmentepublicado en línea con fotos.",
+      "processOptimalizationTopRightText": "Esto se traduce en una pérdida de oportunidades de venta, una devaluación y una rotación más lenta de las existencias. Por regla general, un coche también se prepara completamente antes de fotografiarlo. En este momento, aún no se sabe si el vehículo se venderá a un cliente final o a un concesionario. Por eso, a veces se invierte demasiado esfuerzo innecesario en la preparación, lo que reduce el margen. Además, todo el proceso es <span>muy lento e ineficiente</span>.",
+      "productPresentationAndFeatureLine1": "PRESENTACIÓN DEL PRODUCTO",
+      "productPresentationAndFeatureLine2": "& CARACTERÍSTICAS",
+      "quickImplementation": "Implementación rápida",
+      "realAndQualitativeRendering": "RENDERIZADO REAL Y CUALITATIVO",
+      "realism": "Realismo",
+      "reflections": "Reflejos",
+      "renderingComparison": {
+        "groundReflections": "REFLEJOS EN EL SUELO",
+        "polishRims": "PULIDO DE LLANTAS",
+        "polishVarnish": "PULIDO DE BARNIZ"
+      },
+      "reportPart1": "AUDIT Informe Parte 1.",
+      "rimsGroundReflections": "Llantas (reflejos en el suelo)",
+      "scalingOrientation": "Escala / Orientación",
+      "scoring": "AUDITORÍA PARTE 1. CALIFICACIÓN",
+      "seriesOfPhotos": "Serie de Fotos",
+      "solutionOptipix": "SOLUCIÓN (OPTI)PIX",
+      "spaceSaving": "Ahorro de espacio",
+      "standardBrand": "Aplicación estándar de la marca",
+      "thankYouLine1": "GRACIAS",
+      "thankYouLine2": "¡POR SU ATENCIÓN!",
+      "totalScore": "Puntuación total",
+      "vehiclePhoto": "Foto del vehículo",
+      "vinRecognition": "VIN Reconocimiento",
+      "vinRecognitionText": {
+        "text1": "La APP reconoce el número de identificación del vehículo (VIN).",
+        "text2": "La <span>inteligencia artificial</span> asigna automáticamente la secuencia de fotos a la carpeta correcta del vehículo. No es necesario descargar, guardar ni clasificar las imágenes. Sin carpetas de escritorio y sin pérdida de datos.",
+        "text3": "<span>La sincronización</span> entre la aplicación y la biblioteca se realiza automáticamente.",
+        "text4": "Es posible utilizar nuestro configurador europeo Opti(Config), que determina el equipamiento exacto de sus coches y lo resume automáticamente <span>en una carpeta de ventas</span>."
+      }
+    }
+  }
+}

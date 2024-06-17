@@ -1,0 +1,45 @@
+services:
+  azure-sql-edge:
+    image: mcr.microsoft.com/azure-sql-edge:latest
+    container_name: azure-sql-edge
+    ports:
+      - ${MSSQL_HOST_PORT}:1433
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
+    volumes:
+      - ${VOLUMES_PATH}/mssql/data:/var/opt/mssql/data
+      - ${BACKUP_VOLUMES_PATH}:/var/mssql/backup
+    networks:
+      - caropticom_frontend
+  azurite:
+    image: mcr.microsoft.com/azure-storage/azurite:latest
+    volumes:
+      - ${VOLUMES_PATH}/azurite/data:/data
+    command: "azurite --blobHost 0.0.0.0 --queueHost 0.0.0.0"
+    ports:
+      - "10000:10000"
+      - "10001:10001"
+      - "10002:10002"
+    networks:
+      - caropticom_frontend
+  dotnet-tool:
+    image: acrcaropticomwesteuropedev002.azurecr.io/caropticom-dotnet-tools:latest
+    tty: true
+    stdin_open: true
+    volumes:
+      - ${BACKUP_VOLUMES_PATH}:/app/mssql/backup
+      - ${HTTPS_CERT_PATH}:/usr/local/share/ca-certificates:ro
+    working_dir: /app
+    networks:
+      - caropticom_frontend
+    depends_on:
+      - azure-sql-edge
+    entrypoint: [ "/bin/sh","-c" ]
+    command:
+      - |
+        update-ca-certificates
+        /bin/bash
+networks:
+  caropticom_frontend:
+    driver: bridge

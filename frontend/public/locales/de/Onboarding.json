@@ -1,0 +1,24 @@
+{
+  "notifications": {
+    "onboardingCompleted": "Das Onboarding wurde erfolgreich abgeschlossen",
+    "usersWillBeAdded_many": "{{count}} Benutzer werden nach einer E-Mail-Bestätigung hinzugefügt",
+    "usersWillBeAdded_one": "{{count}} Der Benutzer wird nach einer E-Mail-Bestätigung hinzugefügt",
+    "usersWillBeAdded_other": "{{count}} Benutzer werden nach einer E-Mail-Bestätigung hinzugefügt"
+  },
+  "onboarding": {
+    "addUser": "Benutzer hinzufügen",
+    "delegate": "Delegieren",
+    "editUser": "Benutzer bearbeiten",
+    "finishOnboarding": "Schließen Sie das Onboarding ab",
+    "submit": "Einreichen",
+    "subtitle": "Sie müssen mindestens einem (oder mehreren) Benutzern die folgenden Rollen zuweisen",
+    "title": "Verwalten und laden Sie Kollegen ein, sich Caropticom anzuschließen",
+    "validationMessage": "Sie sind dabei, das Onboarding abzuschließen, ohne Benutzer hinzuzufügen {{roles}} Rollen. Ohne das Hinzufügen sind einige Dienste (z. B. Optipix) nicht verfügbar. Möchten Sie fortfahren, ohne Benutzer hinzuzufügen?",
+    "validationMessage_many": "Sie sind dabei, das Onboarding abzuschließen, ohne Benutzer hinzuzufügen {{roles}} Rollen. Ohne das Hinzufügen sind einige Dienste (z. B. Optipix) nicht verfügbar. Möchten Sie fortfahren, ohne Benutzer hinzuzufügen?",
+    "validationMessage_one": "Sie sind dabei, das Onboarding abzuschließen, ohne Benutzer hinzuzufügen {{roles}} Rolle. Ohne das Hinzufügen sind einige Dienste (z. B. Optipix) nicht verfügbar. Möchten Sie fortfahren, ohne Benutzer hinzuzufügen?",
+    "validationMessage_other": "Sie sind dabei, das Onboarding abzuschließen, ohne Benutzer hinzuzufügen {{roles}} Rollen. Ohne das Hinzufügen sind einige Dienste (z. B. Optipix) nicht verfügbar. Möchten Sie fortfahren, ohne Benutzer hinzuzufügen?"
+  },
+  "users": {
+    "confirmUserRemove": "Möchten Sie den Benutzer wirklich entfernen?"
+  }
+}

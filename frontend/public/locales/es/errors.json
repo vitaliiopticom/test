@@ -1,0 +1,7 @@
+{
+  "AuthorizationService": {
+    "UserManagement": {
+      "InvalidEmail": "Email inválido"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CreateValue": ["CreateBasicTypeOption"],
+  "CreateStepPart": [],
+  "IValueType": [
+    "YesNoOption",
+    "SingleSelectOption",
+    "MultiSelectOption",
+    "DropDownOption",
+    "TextValue",
+    "NumberValue",
+    "DateTimeValue",
+    "QuestionOption"
+  ],
+  "IAnswerValueOutput": [
+    "YesNoOptionOutput",
+    "SingleSelectOptionOutput",
+    "MultiSelectOptionOutput",
+    "DropDownOptionOutput",
+    "TextOptionOutput",
+    "NumberOptionOutput",
+    "DateTimeOptionOutput"
+  ],
+  "IQuestionOrGroup": ["Question", "Group"]
+}

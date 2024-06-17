@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-secondary text-secondary antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-secondary;
+  }
+
+  ::selection {
+    @apply bg-primary text-white;
+  }
+
+  ::-ms-reveal {
+    display: none;
+  }
+}
+
+@layer components {
+  .input-base {
+    @apply w-full rounded-md border border-gray-60 text-secondary placeholder:font-light placeholder:text-secondary-tint-30 hover:border-secondary;
+    @apply disabled:cursor-not-allowed disabled:border-gray-60 disabled:bg-gray-20 disabled:text-secondary-tint-30;
+    @apply focus:border-primary focus:outline-none focus:ring-0;
+  }
+
+  .input-error {
+    @apply border-cerise required:border-cerise focus:border-cerise;
+  }
+
+  .input-notFilled {
+    @apply required:border-blaze focus:border-primary;
+  }
+}

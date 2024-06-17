@@ -1,0 +1,8 @@
+{
+  "onboarding": {
+    "validationMessage": "Vous êtes sur le point de terminer l'intégration sans ajouter d'utilisateurs dans {{roles}} les rôles. Sans les ajouter, certains services (par exemple Optipix) ne seront pas disponibles. Voulez-vous continuer sans ajouter d'utilisateurs ?",
+    "validationMessage_many": "Vous êtes sur le point de terminer l'intégration sans ajouter d'utilisateurs dans {{roles}} les rôles. Sans les ajouter, certains services (par exemple Optipix) ne seront pas disponibles. Voulez-vous continuer sans ajouter d'utilisateurs ?",
+    "validationMessage_one": "Vous êtes sur le point de terminer l'intégration sans ajouter d'utilisateurs dans {{roles}} rôle. Sans les ajouter, certains services (par exemple Optipix) ne seront pas disponibles. Voulez-vous continuer sans ajouter d'utilisateurs ?",
+    "validationMessage_other": "Vous êtes sur le point de terminer l'intégration sans ajouter d'utilisateurs dans {{roles}} les rôles. Sans les ajouter, certains services (par exemple Optipix) ne seront pas disponibles. Voulez-vous continuer sans ajouter d'utilisateurs ?"
+  }
+}
