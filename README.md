@@ -18,7 +18,78 @@ To launch the application, run
 
 ```
 
-## DEVELOPMENT ENVIRONMENT
+## DEV WORKFLOW
+
+### Install tools
+
+- Yarn (1.22.x +)
+- Node.js (v18)
+- [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/)
+
+### Run during development
+
+From a root directory of project run command
+
+run all services
+
+```bash
+docker compose -f docker-compose.yaml -f docker-compose.caropticom.yaml --env-file .env.dev -p caropticom-cn up --build --remove-orphans
+```
+
+stop and remove all services
+
+```bash
+docker compose -f docker-compose.yaml -f docker-compose.caropticom.yaml --env-file .env.dev -p caropticom-cn down
+```
+
+run only selected services (name of service is defined in docker-compose.yaml)
+
+```bash
+docker compose -f docker-compose.yaml -f docker-compose.caropticom.yaml --env-file .env.dev -p caropticom-cn up dotnet-tool --build --remove-orphans
+```
+
+stop services
+
+```bash
+docker compose -f docker-compose.yaml -f docker-compose.caropticom.yaml --env-file .env.dev -p caropticom-cn stop
+```
+
+stop only selected services (name of service is defined in docker-compose.yaml)
+
+```bash
+docker compose -f docker-compose.yaml -f docker-compose.caropticom.yaml --env-file .env.dev -p caropticom-cn stop dotnet-tool
+```
+
+### Run to check is everything works with containers
+
+From a root directory of project run command
+
+```bash
+docker compose -f docker-compose.yaml -f docker-compose.caropticom.yaml --env-file .env.dev -p caropticom-cn up --build --remove-orphans 
+```
+
+Will be available services:
+
+- [caropticom-api](https://localhost:5001/graphql-private/)
+- [caropticom-notification](https://localhost:7146)
+- [caropticom-optipix-webhooks-api](https://localhost:7240)
+- [caropticom-optipix-webhooks-api](https://localhost:7140)
+
+stop containers
+
+```bash
+docker compose -f docker-compose.yaml -f docker-compose.caropticom.yaml --env-file .env.dev  -p caropticom-cn stop
+
+```
+
+stop containers and remove containers
+
+```bash
+docker compose -f docker-compose.yaml -f docker-compose.caropticom.yaml --env-file .env.dev  -p caropticom-cn down
+```
+
+
+## DEVELOPMENT SETUP
 
 ### Install tools and add .env.dev file
 
@@ -212,76 +283,24 @@ VITE_API_URL_PUBLIC=http://localhost:5647/graphql-public
 
 If the changes are not reflected, clear cache or disable cache and try again.
 
-## DEV WORKFLOW
-
-### Run during development
-
-From a root directory of project run command
-
-run all services
-
-```bash
-docker compose -f docker-compose.yaml -f docker-compose.caropticom.yaml --env-file .env.dev -p caropticom-cn up --build --remove-orphans
-```
-
-stop and remove all services
-
-```bash
-docker compose -f docker-compose.yaml -f docker-compose.caropticom.yaml --env-file .env.dev -p caropticom-cn down
-```
-
-run only selected services (name of service is defined in docker-compose.yaml)
-
-```bash
-docker compose -f docker-compose.yaml -f docker-compose.caropticom.yaml --env-file .env.dev -p caropticom-cn up dotnet-tool --build --remove-orphans
-```
-
-stop services
-
-```bash
-docker compose -f docker-compose.yaml -f docker-compose.caropticom.yaml --env-file .env.dev -p caropticom-cn stop
-```
-
-stop only selected services (name of service is defined in docker-compose.yaml)
-
-```bash
-docker compose -f docker-compose.yaml -f docker-compose.caropticom.yaml --env-file .env.dev -p caropticom-cn stop dotnet-tool
-```
-
-### Run to check is everything works with containers
-
-From a root directory of project run command
-
-```bash
-docker compose -f docker-compose.yaml -f docker-compose.caropticom.yaml --env-file .env.dev -p caropticom-cn up --build --remove-orphans 
-```
-
-Will be available services:
-
-- [caropticom-api](https://localhost:5001/graphql-private/)
-- [caropticom-notification](https://localhost:7146)
-- [caropticom-optipix-webhooks-api](https://localhost:7240)
-- [caropticom-optipix-webhooks-api](https://localhost:7140)
-
-stop containers
-
-```bash
-docker compose -f docker-compose.yaml -f docker-compose.caropticom.yaml --env-file .env.dev  -p caropticom-cn stop
-
-```
-
-stop containers and remove containers
-
-```bash
-docker compose -f docker-compose.yaml -f docker-compose.caropticom.yaml --env-file .env.dev  -p caropticom-cn down
-```
-
 ### SQL Database
 
-- connect to container
+- run SQL Server in a container and dotnet tool
+
+```bash
+docker compose -f docker-compose.yaml --env-file .env.dev -p caropticom-cn up azure-sql-edge dotnet-tool --build --remove-orphans
+```
+
+- connect to dotnet-tool container
 
 ```bash
 docker compose -f docker-compose.yaml --env-file .env.dev -p caropticom-cn exec dotnet-tool /bin/bash
+```
+
+- restore backup
+
+```bash
+sqlpackage /Action:Import /SourceFile:"/app/mssql/backup/Prospects.bacpac" /TargetConnectionString:"Server=tcp:azure-sql-edge,1433;Initial Catalog=Prospects;Persist Security Info=False;User ID=SA;Password=Admin_123Password;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=False;Connection Timeout=30;"
 ```
 
 - create backup
@@ -290,11 +309,6 @@ docker compose -f docker-compose.yaml --env-file .env.dev -p caropticom-cn exec 
 sqlpackage /Action:Export /TargetFile:'/app/mssql/backup/Prospects.bacpac' /SourceEncryptConnection:false /p:VerifyExtraction=true /SourceServerName:azure-sql-edge /SourceDatabaseName:Prospects /SourceUser:SA /SourcePassword:'Admin_123Password'
 ```
 
-- restore backup
-
-```bash
-sqlpackage /Action:Import /SourceFile:"/app/mssql/backup/Prospects.bacpac" /TargetConnectionString:"Server=tcp:azure-sql-edge,1433;Initial Catalog=Prospects;Persist Security Info=False;User ID=SA;Password=Admin_123Password;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=False;Connection Timeout=30;"
-```
 
 from local machine connections string to SQL database will be `Server=tcp:localhost,1434;Initial Catalog=Prospects;Persist Security Info=False;User ID=SA;Password=Admin_123Password;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=False;Connection Timeout=30;`
 
