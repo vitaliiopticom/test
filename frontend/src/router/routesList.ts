@@ -15,4 +15,8 @@ export const routes = {
   contentStatistics: () => '/content/statistics',
   onboarding: () => '/onboarding',
   invoicing: () => '/invoicing',
+  incomingLeads: () => '/incoming-leads',
+  leads: () => '/leads',
+  leadDetail: (id: string) => `/leads/detail/${id}`,
+  product: () => '/product',
 };
