@@ -2,59 +2,54 @@
 
 CarOpticom frontend.
 
-## Build and Test
-
-To build locally, you only need Docker.
-
-Build Docker image containing frontend and backend API, run
-
-```bash
-
-```
-
-To launch the application, run
-
-```bash
-
-```
-
 ## DEV WORKFLOW
 
 ### Install tools
 
 - Yarn (1.22.x +)
 - Node.js (v18)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 - [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/)
 
 ### Run during development
 
+Authentication is required to pull images from Azure Container Registry.
+Sign is with corporate account and use a "CarOpticom Subscription 1" subscription.
+
+```bash
+az login
+az acr login -n acrcaropticomwesteuropedev002
+```
+
+We use [docker compose](https://docs.docker.com/compose/) to run dependencies.
+
 From a root directory of project run command
 
-run all services
+- run all services
 
 ```bash
 docker compose -f docker-compose.yaml -f docker-compose.caropticom.yaml --env-file .env.dev -p caropticom-cn up --build --remove-orphans
 ```
 
-stop and remove all services
+- stop and remove all services
 
 ```bash
 docker compose -f docker-compose.yaml -f docker-compose.caropticom.yaml --env-file .env.dev -p caropticom-cn down
 ```
 
-run only selected services (name of service is defined in docker-compose.yaml)
+- run only selected services (name of service is defined in docker-compose.yaml)
 
 ```bash
 docker compose -f docker-compose.yaml -f docker-compose.caropticom.yaml --env-file .env.dev -p caropticom-cn up dotnet-tool --build --remove-orphans
 ```
 
-stop services
+- stop services
 
 ```bash
 docker compose -f docker-compose.yaml -f docker-compose.caropticom.yaml --env-file .env.dev -p caropticom-cn stop
 ```
 
-stop only selected services (name of service is defined in docker-compose.yaml)
+- stop only selected services (name of service is defined in docker-compose.yaml)
 
 ```bash
 docker compose -f docker-compose.yaml -f docker-compose.caropticom.yaml --env-file .env.dev -p caropticom-cn stop dotnet-tool
@@ -279,6 +274,7 @@ OPTICONFIGAPI__PASSWORD=master01
 ```text
 VITE_API_URL_PRIVATE=http://localhost:5647/graphql-private
 VITE_API_URL_PUBLIC=http://localhost:5647/graphql-public
+VITE_TRANSLATIONS_URL=/locales
 ```
 
 If the changes are not reflected, clear cache or disable cache and try again.
@@ -396,6 +392,7 @@ This is a temporary solution to build and deploy application to Azure Container 
 ### Build and push Docker image
 
 ```bash
+az login
 az acr login -n acrcaropticomwesteuropedev002
 ```
 
