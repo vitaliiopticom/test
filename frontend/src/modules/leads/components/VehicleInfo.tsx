@@ -1,7 +1,9 @@
 import { useTranslation } from '@/i18n';
+import { format } from 'date-fns';
 
 import { useGetVehicleByIdQuery } from '../api/getVehicleById';
 import { ProposedVehicleSkeleton } from './skeletons/ProposedVehicleSkeleton';
+import { VehicleDetails } from '../types/vehicleTypes';
 
 
 type Props = {
@@ -21,25 +23,25 @@ const VehicleInfo = ({ vehicle }: Props) => {
       id: vehicle.vehicleId
     },
   });
-
-  console.log(data, '!!!!!!!!!!!!!!!!!!!');
+  const vehicleById: VehicleDetails = data?.vehicleById as VehicleDetails;
 
 
   const { t } = useTranslation();
   return loading ?<ProposedVehicleSkeleton /> : (
-    <div key={vehicle.id} className="flex items-center rounded border p-4">
-      <img src={vehicle.image} alt={vehicle.model} className="mr-4 h-24 w-24" />
-      <div className="flex-grow">
-        <div className="font-bold">{vehicle.model}</div>
-        <div>{vehicle.immatriculationDate}</div>
-        <div>{vehicle.availabilityDate}</div>
-        <div className={vehicle.available ? 'text-green-500' : 'text-red-500'}>
-          {vehicle.available ? t('common.available') : 'common.unavailable'}
+    <div key={vehicleById.id} className="flex gap-2 items-center rounded border p-4">
+      <img src={vehicle.image} alt={vehicleById.name} className="mr-4 h-24 w-24" />
+      <div className="flex flex-col basis-9/12">
+        <div className="font-bold">{vehicleById.name}</div>
+        {!!vehicleById.unitDetails[0].firstRegistration && <div>1st Regis. {format(vehicleById.unitDetails[0].firstRegistration, 'do MMM yyyy')}</div>}
+        <div>Internal Reference (REF) {vehicleById.unitDetails[0].referenceForAd}</div>
+        {!!vehicleById.unitDetails[0].availableFromDate && <div>Date available {format(vehicleById.unitDetails[0].availableFromDate, "do MMM yyyy")}</div>}
+        <div className={vehicleById.unitDetails[0].available ? 'text-green-500' : 'text-red-500'}>
+          {vehicleById.unitDetails[0].available ? t('common.available') : 'common.unavailable'}
         </div>
       </div>
-      <div>
-        <div className="font-bold">{vehicle.price} € TTC</div>
-        <div>{vehicle.kilometers} km</div>
+      <div className="flex flex-col basis-3/12 h-full">
+        <div className="font-bold">{vehicleById.price.netPrice} € TTC</div>
+        <div className="justify-self-center">{vehicleById.unitDetails[0].kilometers} km</div>
       </div>
     </div>
   );

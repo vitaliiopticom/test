@@ -43,8 +43,8 @@ const LeadOverview: FC<LeadOverviewProps> = ({ data, onChange, isSaving }: LeadO
         />
       <LeadVehicleProposed />
       <LeadHistory />
-      <LeadSchedule />
-      <LeadDocument />
+      {/* <LeadSchedule />
+      <LeadDocument /> */}
     </div>
   );
 };

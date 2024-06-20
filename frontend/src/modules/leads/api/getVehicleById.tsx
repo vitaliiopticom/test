@@ -34,6 +34,7 @@ export const GET_VEHICLE_QUERY = gql`
             availableFromDate
             localization
             referenceForAd
+            firstRegistration
         }
         extraFieldsPlatform {
             mainImage {
@@ -59,7 +60,7 @@ export type GetVehicleByIdQueryRequest = {
 };
 
 export type GetVehicleByIdQueryResponse = {
-    vehiclesByFilter: VehicleDetails[];
+  vehicleById: VehicleDetails;
 };
 
 

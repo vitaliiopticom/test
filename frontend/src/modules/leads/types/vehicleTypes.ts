@@ -85,6 +85,7 @@ export type VehicleUnitDetails = {
   availableFromDate: string;
   localization: string;
   referenceForAd: string;
+  firstRegistration: string;
 }
 
 

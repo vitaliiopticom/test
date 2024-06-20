@@ -138,21 +138,21 @@ export const LeadDetailPage: FC = () => {
       title: t('lead.communication'),
       content: <LeadCommunication />,
     },
-    {
-      title: t('lead.vehicle'),
-      content: <div>{t('common.soon')}</div>,
-      locked: true,
-    },
-    {
-      title: t('lead.documents'),
-      content: <div>{t('common.soon')}</div>,
-      locked: true,
-    },
-    {
-      title: t('lead.history'),
-      content: <div>{t('common.soon')}</div>,
-      locked: true,
-    },
+    // {
+    //   title: t('lead.vehicle'),
+    //   content: <div>{t('common.soon')}</div>,
+    //   locked: true,
+    // },
+    // {
+    //   title: t('lead.documents'),
+    //   content: <div>{t('common.soon')}</div>,
+    //   locked: true,
+    // },
+    // {
+    //   title: t('lead.history'),
+    //   content: <div>{t('common.soon')}</div>,
+    //   locked: true,
+    // },
     {
       title: t('lead.information'),
       content: <div>{t('common.soon')}</div>,
