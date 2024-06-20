@@ -24,7 +24,8 @@ const LeadVehicleProposed = () => {
     variables: { leadId: id || '' },
   });
 
-  const { leadVehiclesById: {leadVehicles} = {}} = data! || {};
+  const { leadVehiclesById } = data! || {};
+  const leadVehicles = leadVehiclesById?.leadVehicles || []
   return (
     <>
       <section>
@@ -54,11 +55,11 @@ const LeadVehicleProposed = () => {
 
 
       {isModalOpen && <AddProposedVehicleModel
-      refetch={refetch}
-      isLoading={loading}
-      closeModal={closeModal}
-      isOpen={isModalOpen}
-      leadVehicles={leadVehicles}
+        refetch={refetch}
+        isLoading={loading}
+        closeModal={closeModal}
+        isOpen={isModalOpen}
+        leadVehicles={leadVehicles}
       />}
     </>
   );

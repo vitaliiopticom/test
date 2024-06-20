@@ -107,7 +107,7 @@ export const AddProposedVehicleModel = ({ isLoading, refetch, closeModal, isOpen
       disabled: isLoading || !selectedVehicles?.length,
       isLoading: isLoading,
       type: 'submit',
-      children: `${t('common.create')} ${selectedVehicles?.length ? '('+selectedVehicles.length+')' : ''}`,
+      children: `${t('common.create')} ${selectedVehicles?.length ? '(' + selectedVehicles.length + ')' : ''}`,
       key: 'confirmButton',
       onClick: handleCreate
     },
@@ -137,7 +137,9 @@ export const AddProposedVehicleModel = ({ isLoading, refetch, closeModal, isOpen
             return <div>Loading...</div>; // or any other fallback UI
           }
 
-          const vehicles = data.vehiclesByFilter?.filter((v: any) => v.id !== leadVehicles?.vehicleId);
+          const vehicles = data.vehiclesByFilter?.filter((v: any) => {
+            return !leadVehicles?.find((lv: LeadVehicles) => v.id === lv.vehicleId)
+          });
 
           // return <PaginationAdapter data={items || []} id="vehicles_to_add">
           //   {(pageData) => (

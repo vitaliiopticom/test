@@ -5,6 +5,20 @@ import type { FilterValues } from './types';
 
 
 
+export const CONTENT_ITEM_TYPE = {
+  DETAILS: 'DETAILS',
+  EXTERIOR: 'EXTERIOR',
+  INTERIOR: 'INTERIOR',
+  VIDEO: 'VIDEO',
+} as const;
+
+export const FILES_EVIDENCE_STATE = {
+  onlyPhotos: 'onlyPhotos',
+  onlyVideos: 'onlyVideos',
+  all: 'all',
+} as const;
+
+
 export const IMAGE_TYPE = {
   ORIGINAL: 'ORIGINAL',
   PROCESSED: 'PROCESSED',

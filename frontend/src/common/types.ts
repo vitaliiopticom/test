@@ -2,6 +2,10 @@ import { UploadFile } from '@/types/file';
 
 import { Company } from '../modules/companies';
 
+import {
+  FILES_EVIDENCE_STATE,
+} from './constants';
+
 export type VehicleDetailParams = {
   id: string;
 };
@@ -103,5 +107,7 @@ export type StatisticsDateFiltersForApi = {
   dateFrom: string | null;
   dateTo: string | null;
 };
+
+export type FileEvidenceState = keyof typeof FILES_EVIDENCE_STATE;
 
 export type CompanyGroup = Pick<Company, 'companyName' | 'tenantId'>;
