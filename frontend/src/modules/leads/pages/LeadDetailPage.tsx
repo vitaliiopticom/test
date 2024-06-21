@@ -137,6 +137,7 @@ export const LeadDetailPage: FC = () => {
     {
       title: t('lead.communication'),
       content: <LeadCommunication />,
+      disabled: true,
     },
     // {
     //   title: t('lead.vehicle'),
@@ -157,6 +158,7 @@ export const LeadDetailPage: FC = () => {
       title: t('lead.information'),
       content: <div>{t('common.soon')}</div>,
       locked: true,
+      disabled: true
     },
   ];
 
@@ -192,7 +194,7 @@ export const LeadDetailPage: FC = () => {
                 variant="secondary"
                 onClick={() => navigate(routes.leads())}
               >
-                {t('common.rebascule')}
+                {t('common.back')}
               </Button>
             </div>
             <div className=" flex  flex-row items-center">
@@ -204,11 +206,11 @@ export const LeadDetailPage: FC = () => {
                 {t('common.close')}
               </Button>
             </div>
-            <div className=" flex  flex-row items-center">
+            {/* <div className=" flex  flex-row items-center">
               <ActionsMenu
                 items={[
                   {
-                    label: t('common.history'),
+                    label: t('lead.history'),
                     to: routes.leads(),
                   },
                   {
@@ -221,15 +223,15 @@ export const LeadDetailPage: FC = () => {
                   },
                 ]}
               />
-            </div>
+            </div> */}
           </div>
         </>
       }
       backButton={true}
       title={
         <div className="flex items-center">
-          <span>{t('leads.detail')}</span>
-          <span className="mx-3 text-3xl">| {'DEALERSHIP'}</span>
+          <span>{t('leads.detailPageLabel')}</span>
+          {/* <span className="mx-3 text-3xl">| {'DEALERSHIP'}</span> */}
         </div>
       }
     >

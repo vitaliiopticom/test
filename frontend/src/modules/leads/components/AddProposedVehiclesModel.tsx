@@ -125,14 +125,13 @@ export const AddProposedVehicleModel = ({ isLoading, refetch, closeModal, isOpen
     <Modal
       isOpen={isOpen}
       onClose={closeModal}
-      title="Add business"
+      title={t('lead.addBusiness')}
       actions={actions}
       className="container mx-auto p-4 w-11/12 max-w-screen-2xl"
     >
       <QueryDataLoader query={vehiclesQuery} keepPreviousData useCustomLoading>
 
         {({ data, isLoading, isRefetching }) => {
-          console.log(data, '!!!!!!!!!!!!!!!');
           if (!data || isLoading) {
             return <div>Loading...</div>; // or any other fallback UI
           }

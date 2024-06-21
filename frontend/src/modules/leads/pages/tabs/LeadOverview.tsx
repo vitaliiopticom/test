@@ -28,12 +28,12 @@ const LeadOverview: FC<LeadOverviewProps> = ({ data, onChange, isSaving }: LeadO
   return (
     <div className="grid grid-cols-1 gap-7 md:grid-cols-2">
       <div className="md:col-span-2">
-        <LeadDealership
+        {/* <LeadDealership
           market={'France'}
           dealership={'Garage Gros'}
           platform={leadById?.platform || ""}
           creationDate={leadById?.createdAt || ""}
-        />
+        /> */}
       </div>
 
       <LeadInfo

@@ -178,6 +178,7 @@
     "access": "Accès",
     "actions": "Actions",
     "after": "Après",
+    "agent": "Agent",
     "apply": "Appliquer",
     "audit": "Audit",
     "back": "Retour",
@@ -218,6 +219,7 @@
     "defaultLanguage": "Langue de communication",
     "delete": "Supprimer",
     "deleteConfirmationTitle": "Désactiver la validation",
+    "deleteSelected": "Supprimer sélectionnée",
     "detail": "Détail",
     "download": "Télécharger",
     "edit": "Modifier",
@@ -302,6 +304,7 @@
     "status": "Statut",
     "streetName": "Rue",
     "streetNumber": "N° de rue",
+    "subject": "Sujet",
     "submit": "Sauvegarder",
     "tenant": "Société",
     "title": "Civilité",
@@ -1264,6 +1267,9 @@
     "original": "Original",
     "photos": "Photos",
     "position": "Position",
+    "qualityFeedback": {
+      "PhotographersReflection": "Réflexion des photographes"
+    },
     "statistics": "Statistiques sur les véhicules",
     "statisticsComingSoon": {
       "header": "Statistiques sur les véhicules à venir",
@@ -1385,6 +1391,51 @@
     "phone": "Numéro de téléphone invalide",
     "phoneOrMobile": "Le numéro de téléphone portable ou le numéro de téléphone doit être renseigné.",
     "required": "Ce champ est obligatoire"
+  },
+  "lead": {
+    "addBusiness": "Ajouter une entreprise",
+    "businessState": {
+      "Caropticom": "Caroptique",
+      "ContactDeptSales": "Contacter le service commercial",
+      "Discarded": "Mis au rebut",
+      "Inacessible": "Inaccessible",
+      "InNegotitation": "En négociation",
+      "Lost": "Perdu",
+      "QuoteSent": "Devis envoyé",
+      "RebootWithoutPhone": "Redémarrer sans téléphone",
+      "Sold": "Vendu",
+      "VOChangeEstimate": "Estimation du changement de VO"
+    },
+    "businessStatusLabel": "Statut de l'entreprise",
+    "color": "Couleur",
+    "communication": "Communication",
+    "dateAvailable": "Date de disponibilité",
+    "dealership": "Concession",
+    "finition": "Finition",
+    "history": "Histoire",
+    "Inacessible": "Inaccessible",
+    "information": "Information",
+    "km": "Km",
+    "market": "Marché",
+    "overview": "Aperçu",
+    "platform": "Plate-forme",
+    "price": "Prix",
+    "ref": "Réf.",
+    "status": {
+      "Cancelled": "Annulé",
+      "InFollowUp": "En suivi",
+      "Lost": "Perdu",
+      "ToProcess": "Procéder",
+      "Won": "Gagné"
+    },
+    "unavailable": "Indisponible",
+    "vehicleProposed": "Véhicule proposé",
+    "vinLabel": "VIN"
+  },
+  "leads": {
+    "addNew": "Créer un nouveau prospect ",
+    "detailPageLabel": "Gestion des leads",
+    "pageLabel": "Gestion des leads pour"
   },
   "login": {
     "text": "Caropticom est la solution CRM idéale pour améliorer votre présence en ligne, et intervenir rapidement dans la prospection et la vente de vos véhicules d'occasion.",

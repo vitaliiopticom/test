@@ -86,7 +86,7 @@ export const LeadsList: FC = () => {
           cell: ({ row }) => {
             return (
               <div onClick={(e) => e.stopPropagation()}>
-                <Avatar name={'User Access'} alt={'User Access'} />
+                {!!row.original.agentId && <Avatar name={t('common.agent')} alt={t('common.agent')} />}
               </div>
             );
           },

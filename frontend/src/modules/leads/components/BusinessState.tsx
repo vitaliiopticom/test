@@ -3,6 +3,8 @@ import { Dropdown } from '@/components/elements';
 import { Button } from '@/components/elements';
 import { useTranslation } from '@/i18n';
 
+import { getLeadBusinessStatusOptions } from '../utils/leadUtils';
+
 import { BusinessStateEnum } from '../types/leadTypes';
 
 
@@ -15,23 +17,28 @@ type Props = {
   value: string | undefined;
 }
 
-const options: { label: string; code: string }[] = [{
-  label: 'Choose business state',
-  code: ''
-}];
+// const options: { label: string; code: string }[] = [{
+//   label: 'Choose business state',
+//   code: ''
+// }];
 
 
-for (const key in BusinessStateEnum) {
-  if (BusinessStateEnum.hasOwnProperty(key)) {
-    const enumKey = key as keyof typeof BusinessStateEnum;
-    options.push({ label: key, code: BusinessStateEnum[enumKey] });
-  }
-}
+// for (const key in BusinessStateEnum) {
+//   if (BusinessStateEnum.hasOwnProperty(key)) {
+//     const enumKey = key as keyof typeof BusinessStateEnum;
+//     options.push({ label: key, code: BusinessStateEnum[enumKey] });
+//   }
+// }
 
 /**
  * Represents a component for selecting a business state.
  */
 export const BusinessState = ({onChange, value}: Props) => {
+
+  const { t } = useTranslation();
+  const options = getLeadBusinessStatusOptions(t);
+
+  getLeadBusinessStatusOptions
   /**
    * Handles the state change when a new state is selected.
    * @param state - The selected business state.
@@ -42,7 +49,6 @@ export const BusinessState = ({onChange, value}: Props) => {
   };
 
   const [selectedState, setSelectedState] = useState('');
-  const { t } = useTranslation();
 
   useEffect(() => {
     setSelectedState((value || '') as BusinessStateEnum)
@@ -64,7 +70,7 @@ export const BusinessState = ({onChange, value}: Props) => {
       )}
     >
       <Button variant="secondary" className="whitespace-nowrap">
-        {options.find((state) => state.code === selectedState)?.code ||
+        {options.find((state) => state.code === selectedState)?.label ||
           options[0].label}
       </Button>
     </Dropdown>

@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Dropdown } from '@/components/elements';
 import { Button } from '@/components/elements';
-// import { useTranslation } from '@/i18n';
+import { useTranslation } from '@/i18n';
+
+import { getLeadStatusOptions } from '../utils/leadUtils';
 
 import { LeadStateEnum } from '../types/leadTypes';
 
@@ -14,23 +16,12 @@ type Props = {
   value: string | undefined;
 }
 
-const options: { label: string; code: string }[] = [{
-  label: 'Choose state',
-  code: ''
-}];
-
-
-for (const key in LeadStateEnum) {
-  if (LeadStateEnum.hasOwnProperty(key)) {
-    const enumKey = key as keyof typeof LeadStateEnum;
-    options.push({ label: key, code: LeadStateEnum[enumKey] });
-  }
-}
-
 /**
  * Component for selecting the lead state.
  */
 export const LeadState = ({ onChange, value }: Props) => {
+  const { t } = useTranslation();
+  const options = getLeadStatusOptions(t);
   /**
    * Handles the state change when a new state is selected.
    * @param state - The selected state.
@@ -64,7 +55,7 @@ export const LeadState = ({ onChange, value }: Props) => {
     >
       {/* A button that displays the currently selected state */}
       <Button variant="secondary" className="whitespace-nowrap">
-        {options.find((state) => state.code === selectedState)?.code ||
+        {options.find((state) => state.code === selectedState)?.label ||
           options[0].label}
       </Button>
     </Dropdown>

@@ -27,8 +27,8 @@ const LeadHistory = () => {
               {t('lead.historique')}
             </Heading>
             <div className="flex space-x-2">
-              <Button className="p-2" variant="secondary" startIcon="eye" />
-              <Button onClick={openModal} className="p-2" startIcon="plus" />
+              <Button className="p-2" variant="secondary" startIcon="eye" disabled />
+              <Button onClick={openModal} className="p-2" startIcon="plus" disabled />
             </div>
           </div>
           <div className="max-h-96 overflow-auto">

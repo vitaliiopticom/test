@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { Card, Heading, Button } from '@/components/elements';
 import { t } from 'i18next';
 import VehicleInfo from './VehicleInfo';
-import { vehicles } from './vehicles';
 
 import { useGetLeadVehiclesQuery } from '../api/getLeadVehiclesById';
 import { ProposedVehiclesSkeleton } from '@/modules/leads/components/skeletons';

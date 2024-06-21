@@ -31,7 +31,8 @@ import { languageOptions } from '../utils/leadUtils';
 export const LeadsPage: FC = () => {
   const { t } = useTranslation();
   const createModal = useDisclosure();
-  const tenantId = useTenant().tenant?.id || '';
+  const tenant = useTenant().tenant;
+  const tenantId = tenant?.id || '';
   const inputParameters = {
     pagingParameters: {
       pageIndex: 1, // Example page index
@@ -42,6 +43,7 @@ export const LeadsPage: FC = () => {
       leadState: LeadStateEnum.ToProcess, // Example lead state
     }
   };
+  console.log(tenant, '!!!!!!!');
 
   const leadsQuery = useGetLeadsQuery({
     variables: { inputParameters }
@@ -91,7 +93,7 @@ export const LeadsPage: FC = () => {
         actions={
           <Button onClick={createModal.onOpen}>{t('leads.addNew')}</Button>
         }
-        title={t('common.leads')}
+        title={`${t('leads.pageLabel')}: ${tenant?.name || ''}`}
       >
         <QueryDataLoader query={leadsQuery} keepPreviousData useCustomLoading>
           {({ data, isLoading, isRefetching }) => (

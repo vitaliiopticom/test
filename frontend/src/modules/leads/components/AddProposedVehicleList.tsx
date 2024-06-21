@@ -7,10 +7,7 @@ import { formatDate } from '@/utils/date';
 import { DataView, createTableColumns } from '@/components/shared';
 import { VehicleDetails } from '../types/vehicleTypes';
 
-import { Checkbox, Text, Image } from '@/components/elements';
-
-import { FALLBACK_IMAGE } from '../constants'
-import { VehicleFilterProposed } from '@/common/components/filters';
+import { Checkbox, Text } from '@/components/elements';
 
 type Props = {
   selectedVehicles: VehicleDetails[];
@@ -43,7 +40,7 @@ export const AddProposedVehicleList = ({ onVehiclesAdd, isLoading, selectedVehic
         }),
         ch.accessor('unitDetails', {
           id: 'vin',
-          header: () => 'VIN',
+          header: () => t('lead.vin'),
           cell: ({ row }) => (
             <div
               className="text-sm font-normal"
@@ -53,7 +50,7 @@ export const AddProposedVehicleList = ({ onVehiclesAdd, isLoading, selectedVehic
           ),
         }),
         ch.accessor('model', {
-          header: () => "Model",
+          header: () => t('lead.model'),
           cell: ({ row }) => (
             <div className="flex h-full w-full flex-col">
               <Text size="sm" className='text-ellipsis overflow-hidden'>
@@ -67,7 +64,7 @@ export const AddProposedVehicleList = ({ onVehiclesAdd, isLoading, selectedVehic
           ),
         }),
         ch.accessor('name', {
-          header: () => "Finition",
+          header: () => t('lead.finition'),
           cell: ({ row }) => {
             return <div className="text-sm font-normal text-ellipsis overflow-hidden">
               {row.original.name}
@@ -76,7 +73,7 @@ export const AddProposedVehicleList = ({ onVehiclesAdd, isLoading, selectedVehic
         }),
         ch.accessor('unitDetails', {
           id: 'color',
-          header: () => "Color",
+          header: () => t('lead.color'),
           cell: ({ row }) => (
             <div className="text-sm font-normal">
               {row.original.unitDetails[0].colorName}
@@ -86,7 +83,7 @@ export const AddProposedVehicleList = ({ onVehiclesAdd, isLoading, selectedVehic
 
         ch.accessor('unitDetails', {
           id: 'km',
-          header: () => "Km",
+          header: () => t('lead.km'),
           cell: ({ row }) => {
             return <div className="text-sm font-normal">
               {row.original.unitDetails[0].kilometers}
@@ -96,7 +93,7 @@ export const AddProposedVehicleList = ({ onVehiclesAdd, isLoading, selectedVehic
 
         ch.accessor('unitDetails', {
           id: 'ref',
-          header: () => "Ref.",
+          header: () => t('lead.ref'),
           cell: ({ row }) => {
             return <div className="text-sm font-normal">
               {row.original.unitDetails[0].referenceForAd}
@@ -105,7 +102,7 @@ export const AddProposedVehicleList = ({ onVehiclesAdd, isLoading, selectedVehic
         }),
 
         ch.accessor('price', {
-          header: () => "Price",
+          header: () => t('lead.price'),
           cell: ({ row }) => {
             return <div className="text-sm font-normal">
               {row.original.price.netPrice}
@@ -114,7 +111,7 @@ export const AddProposedVehicleList = ({ onVehiclesAdd, isLoading, selectedVehic
         }),
         ch.accessor('unitDetails', {
           id: 'dataAvailable',
-          header: () => "Date Available",
+          header: () => t('lead.dateAvailable'),
           cell: ({ row }) => (
             <div className="text-sm font-normal">
               {!row.original.unitDetails[0].availableFromDate
@@ -132,28 +129,11 @@ export const AddProposedVehicleList = ({ onVehiclesAdd, isLoading, selectedVehic
         //     </div>
         //   ),
         // }),
-
-        // ch.accessor('detail.coverImage.image.thumbnailUri', {
-        //   header: () => '',
-        //   cell: ({ row }) => (
-        //     <div>
-        //       <Image
-        //         alt=""
-        //         className="h-9 overflow-hidden rounded-md"
-        //         fallbackPath={FALLBACK_IMAGE}
-        //         src={row.original.detail?.coverImage?.image?.thumbnailUri}
-        //       />
-        //     </div>
-        //   ),
-        // }),
-
-
       ]),
     [t, selectedVehicles],
   );
 
   return <div className="flex flex-col gap-5">
-    {/* <VehicleFilterProposed isLoading={isLoading} /> */}
     <DataView.Table columns={columns} onRowClick={onVehiclesAdd} />
   </div>
 };

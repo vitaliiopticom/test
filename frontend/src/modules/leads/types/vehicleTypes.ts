@@ -68,7 +68,15 @@ export type VehicleDetails = {
   constructionYear: string;
   price: VehiclePrice;
   unitDetails: VehicleUnitDetails[];
+  firstImageDAT: VehicleImage;
 };
+
+export type VehicleImage = {
+  path: string;
+  isLastPhoto: boolean;
+  isDeleted: boolean;
+  order: number;
+}
 
 export type VehiclePrice = {
   offerPrice: number;

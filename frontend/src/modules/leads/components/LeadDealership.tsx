@@ -1,5 +1,6 @@
 import { FlagCountry } from '@/components/elements/FlagCountry/FlagCountry';
 import { useTranslation } from '@/i18n';
+import { format } from 'date-fns';
 
 interface LeadDealershipProps {
   market: string;
@@ -59,9 +60,9 @@ const LeadDealership = ({
       {/* Creation Date */}
       <div>
         <p className="text-xs font-medium uppercase tracking-wide text-gray-600">
-          {t('lead.creation_date')}
+          {t('common.created')}
         </p>
-        <p className="text-sm text-gray-900">{creationDate}</p>
+        <p className="text-sm text-gray-900">{!!creationDate && format(creationDate, "do MMM yyyy")}</p>
       </div>
     </div>
   );
