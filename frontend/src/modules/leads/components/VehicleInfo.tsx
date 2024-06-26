@@ -48,8 +48,9 @@ const VehicleInfo = ({ vehicle }: Props) => {
   });
 
   const vehicleById: any = data?.vehicleById;
-  const image =
-    data2?.vehicles.vehicles.items[0].detail.coverImage.image.thumbnailUri;
+  const image = data2?.vehicles?.vehicles?.items?.length ?
+    data2?.vehicles?.vehicles?.items[0]?.detail?.coverImage?.image?.thumbnailUri
+    : '';
 
   const { t } = useTranslation();
   return loading ?<ProposedVehicleSkeleton /> : (

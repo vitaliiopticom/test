@@ -43,8 +43,10 @@ export type GetVehiclesQueryRequest = {
 
 export type GetVehiclesQueryResponse = {
   vehicles: {
-    count: number;
-    items: any[];
+    vehicles: {
+      count: number;
+      items: any[];
+    }
   };
   photoBoxStatus: string;
 };
