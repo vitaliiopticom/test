@@ -1669,7 +1669,9 @@
   },
   "leads": {
     "addNew": "Create new Lead ",
+    "deleteGroup": "Delete lead group?",
     "detailPageLabel": "Leads management",
+    "incoming": "Incoming Leads",
     "pageLabel": "Lead Management for"
   },
   "login": {

@@ -36,7 +36,7 @@ export type GetLeadsQueryRequest = {
     },
     filterParameters: {
       firstResponse: boolean;
-      leadState: LeadStateEnum;
+      leadState: LeadStateEnum | null;
     }
   }
 };

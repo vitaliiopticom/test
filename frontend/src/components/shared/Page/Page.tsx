@@ -28,6 +28,7 @@ export const Page: FC<PageProps> = ({
   className,
 }) => {
   useDocumentTitle(documentTitle || (title as DocumentTitle));
+  console.log(backButton, '!!!!!!!!!!!!!!!!!!!!!!');
 
   return (
     <>

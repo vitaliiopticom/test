@@ -15,9 +15,9 @@ export const languageOptions = LANGS.map((lang) => ({
   name: lang.label,
 }));
 
-export const getLeadStatusOptions = (t: any) => {
+export const getLeadStatusOptions = (t: any, defaultLabel?: string) => {
   const options: { label: string; code: string }[] = [{
-    label: t('lead.leadStatus'),
+    label: defaultLabel || t('lead.leadStatus'),
     code: ''
   }];
 

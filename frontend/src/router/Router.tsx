@@ -41,7 +41,7 @@ const router = createBrowserRouter(
         <Route element={<UsersRoutes />} path={`${routes.users()}/*`} />
         <Route element={<CompaniesRoutes />} path={`${routes.companies()}/*`} />
         <Route element={<LeadsRoutes />} path={`${routes.leads()}/*`} />
-        <Route element={<LeadsRoutes />} path={`${routes.incomingLeads()}/*`} />
+        {/* <Route element={<LeadsRoutes />} path={`${routes.incomingLeads()}/*`} /> */}
         <Route element={<ProductRoutes />} path={`${routes.product()}/*`} />
 
         <Route

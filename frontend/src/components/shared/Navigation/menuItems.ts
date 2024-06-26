@@ -30,13 +30,14 @@ export const getMenuItems = (t: TFunction): NavItemProps[] => [
     isLocked: true,
   },
   {
-    to: '/',
+    to: '/leads',
     icon: 'crossahair',
     label: 'Opti(leads)',
-    isLocked: true,
+    isLocked: false,
+    end: true
   },
   {
-    to: '/incoming-leads',
+    to: '/leads/incoming',
     icon: 'folderPlus',
     label: 'Incoming Leads',
     isLocked: false,

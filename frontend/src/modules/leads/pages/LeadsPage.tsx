@@ -3,7 +3,6 @@ import { FC } from 'react';
 import { Button } from '@/components/elements';
 import {
   DataView,
-  DataViewFiltersChangeHandler,
   Page,
   PaginationAdapter,
   QueryDataLoader,
@@ -11,28 +10,22 @@ import {
 import { useDisclosure } from '@/hooks';
 import { useTranslation } from '@/i18n';
 
-import { LeadsList } from '../../leads/components/LeadsList';
+import { IncomingLeadsList } from '../../leads/components/IncomingLeadsList';
 
 import {
-  CreateLeadFormValues,
   LeadStateEnum,
-  LeadsListFiltersType,
 } from '../types/leadTypes';
 import { useGetLeadsQuery } from '../api/getLeads';
 import {
   LEADS_DATA_VIEW_ID,
   leadsListFiltersDefaultValues,
 } from '../constants';
-import { useCreateLeadMutation } from '../api/createLead';
-import { LeadFormModal } from '../components/LeadFormModal';
 import { useTenant } from '@/modules/tenants';
-import { languageOptions } from '../utils/leadUtils';
 
 export const LeadsPage: FC = () => {
   const { t } = useTranslation();
   const createModal = useDisclosure();
   const tenant = useTenant().tenant;
-  const tenantId = tenant?.id || '';
   const inputParameters = {
     pagingParameters: {
       pageIndex: 1, // Example page index
@@ -43,57 +36,20 @@ export const LeadsPage: FC = () => {
       leadState: LeadStateEnum.ToProcess, // Example lead state
     }
   };
-  console.log(tenant, '!!!!!!!');
 
   const leadsQuery = useGetLeadsQuery({
     variables: { inputParameters }
     });
   const handleClose = () => {
-    // setLeadToAdd(undefined);
-
     createModal.onClose();
   };
 
-  const [createLead, createLeadState] = useCreateLeadMutation({
-    onCompleted: handleClose,
-  });
 
-  const handleCreateLead = (values: CreateLeadFormValues) => {
-    const { ...restValues } = values;
-    const clientInformation = restValues.clientInformation;
-
-    const leadValues = {
-      ...restValues,
-      clientInformation: { ...clientInformation, language: clientInformation.language?.toUpperCase() || '' },
-      tenantId,
-    };
-
-    createLead({
-      variables: {
-        input: leadValues,
-      },
-    });
-  };
-
-  // useEffect(() => {
-  //   if (leadToAdd) {
-  //     handleCreateLead(leadToAdd);
-  //   }
-  // }, [leadToAdd]);
-
-  const handleChange: DataViewFiltersChangeHandler<LeadsListFiltersType> = (
-    filters,
-  ) => {
-    // leadsQuery.refetch({ filters });
-  };
 
   return (
     <>
       <Page
-        actions={
-          <Button onClick={createModal.onOpen}>{t('leads.addNew')}</Button>
-        }
-        title={`${t('leads.pageLabel')}: ${tenant?.name || ''}`}
+        title={`${t('leads.pageLabel')}: ${t('leads.incoming')}`}
       >
         <QueryDataLoader query={leadsQuery} keepPreviousData useCustomLoading>
           {({ data, isLoading, isRefetching }) => (
@@ -106,21 +62,13 @@ export const LeadsPage: FC = () => {
                   isFetching={isRefetching}
                   isLoading={isLoading}
                   recordsCount={data?.leads?.length}
-                  onFiltersChange={handleChange}
                 >
-                  <LeadsList />
+                  <IncomingLeadsList />
                 </DataView>
               )}
             </PaginationAdapter>
           )}
         </QueryDataLoader>
-        <LeadFormModal
-          isLoading={createLeadState.loading}
-          isOpen={createModal.isOpen}
-          title={t('leads.addNew')}
-          onClose={createModal.onClose}
-          onSubmit={handleCreateLead}
-        />
       </Page>
     </>
   );

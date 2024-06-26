@@ -1469,7 +1469,9 @@
   },
   "leads": {
     "addNew": "Créer un nouveau prospect ",
+    "deleteGroup": "Supprimer le groupe principal ?",
     "detailPageLabel": "Gestion des leads",
+    "incoming": "Pistes entrantes",
     "pageLabel": "Gestion des leads pour"
   },
   "login": {

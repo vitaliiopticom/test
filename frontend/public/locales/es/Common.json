@@ -1482,7 +1482,9 @@
   },
   "leads": {
     "addNew": "Crear nuevo cliente potencial ",
+    "deleteGroup": "¿Eliminar grupo principal?",
     "detailPageLabel": "Gestión de leads",
+    "incoming": "Clientes potenciales entrantes",
     "pageLabel": "Gestión de clientes potenciales para"
   },
   "login": {

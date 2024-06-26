@@ -35,6 +35,33 @@ export const GET_VEHICLE_QUERY = gql`
             localization
             referenceForAd
             firstRegistration
+            aBS
+            accidentDamaged
+            airbag
+            airbagDriver
+            airbagFront
+            airbagLateral
+            airbagPassenger
+            airbagRear
+            alarm
+            androidAuto
+            antiFog
+            appleCarPlay
+            armrest
+            armrestRear
+            audio
+            audiSoundSystem
+            auxiliaryHeating
+            blindSpotWarning
+            bluetooth
+            bookingDate
+            camera
+            camera360
+            centralLocking
+            climaBiZone
+            climaFourZones
+            climaThreeZones
+            cruiseControl
         }
         extraFieldsPlatform {
             mainImage {
@@ -50,6 +77,20 @@ export const GET_VEHICLE_QUERY = gql`
             isLastPhoto
             isDeleted
         }
+        aEROComment
+        cO2Emission
+        consumptionCombined
+        consumptionInner
+        consumptionOuter
+        consumptionPowerCombined
+        cylinderCapacity
+        fullNameMasterDelegated
+        hybridPlugin
+        isImportedVehicle
+        lastRevisionDate
+        lastRevisionlByName
+        rangeExtender
+        revisionOk
     }
   }
 `;

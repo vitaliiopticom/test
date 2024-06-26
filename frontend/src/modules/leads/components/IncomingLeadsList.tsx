@@ -1,23 +1,16 @@
 import { FC, useMemo, useState } from 'react';
-import { DataView, Tabs, createTableColumns, useDataViewContext } from '@/components/shared';
+import { DataView, createTableColumns } from '@/components/shared';
 import { useTranslation } from '@/i18n';
+import CountdownTimer from './CountdownTimer';
 
 import { routes } from '@/router/routesList';
-import { ActionsMenu, Avatar, Button, Checkbox } from '@/components/elements';
+import { ActionsMenu, Avatar, Button } from '@/components/elements';
+import { useNavigate } from 'react-router-dom';
 import { Lead } from '../types/interface';
 import LanguageFlag from '@/components/elements/FlagLanguage/FlagLanguage';
 import IconPlatform from '@/components/elements/IconPlatform/IconPlatform';
-import { LeadsListFilters } from './LeadsListFilters';
-import { getLeadStatusOptions } from '../utils/leadUtils';
-import { LeadStateEnum } from '../types/leadTypes';
+import { differenceInSeconds } from 'date-fns';
 
-
-type Props = {
-  onTabChange: (l: LeadStateEnum) => void;
-  selectedLeads: any[];
-  setSelectedLeads: (leads: any[]) => void;
-  deleteLeads: (id?: string) => void;
-}
 /**
  * Renders a list of leads.
  *
@@ -27,45 +20,33 @@ type Props = {
  * @returns {JSX.Element} - The rendered LeadsList component.
  */
 
-export const LeadsList: FC<Props> = ({ selectedLeads, setSelectedLeads, onTabChange, deleteLeads }) => {
+export const IncomingLeadsList: FC = () => {
   const { t } = useTranslation();
-  const { isLoading, data } = useDataViewContext();
-  const [selectedTab, setSelectedTab] = useState(1);
-
-  const leadStatus = getLeadStatusOptions(t, 'All active');
-
-  const tabs = [...leadStatus.map((l, i) => ({
-    title: `${l.label}${i === selectedTab && !isLoading ? '(' + data.length + ')' : ''}`,
-    disabled: i === 0,
-    code: l.code,
-    content: <></>,
-  }))]
-
-  const changeTab = (v: number) => {
-    setSelectedTab(v);
-    setSelectedLeads([]);
-    onTabChange(leadStatus.find((_, i) => v === i)?.code as LeadStateEnum);
-  }
+  const [selectedLeads, setSelectedLeads] = useState<Set<string>>(new Set());
+  const [selectedLead, setSelectedLead] = useState<string>("");
+  const navigate = useNavigate();
 
   const handleRowClick = (lead: Lead) => {
-    if (!selectedLeads.find(v => v.id === lead.id)) {
-      setSelectedLeads(([...selectedLeads, lead]));
-    } else {
-      setSelectedLeads(selectedLeads.filter((v) => v.id !== lead.id));
-    }
+    navigate(routes.leadDetail(lead.id));
   };
 
   const columns = useMemo(
     () =>
       createTableColumns<Lead>((ch) => [
         ch.accessor('createdAt', {
-          header: () => "",
+          header: () => t('optileads.time'),
           cell: ({ row }) => {
-
+            const createdAt = new Date(row.original.createdAt);
+            const timePassedInSeconds = differenceInSeconds(
+              new Date(),
+              createdAt,
+            );
+            const timeRemaining = 30 - timePassedInSeconds / 60;
             return (
-              <Checkbox
-                checked={!!selectedLeads.find(v => v.id === row.original.id)}
-                onChange={() => { }}
+              <CountdownTimer
+                key={row.original.id}
+                initialTimeInMinutes={30}
+                currentTimeInMinutes={timeRemaining > 0 ? timeRemaining : 0}
               />
             );
           },
@@ -127,7 +108,7 @@ export const LeadsList: FC<Props> = ({ selectedLeads, setSelectedLeads, onTabCha
                           {t('common.deactivate')}
                         </span>
                       ),
-                      onClick: () => deleteLeads(row.original.id),
+                      onClick: () => console.log('delete', row.original.id),
                     },
                   ]}
                 />
@@ -136,39 +117,25 @@ export const LeadsList: FC<Props> = ({ selectedLeads, setSelectedLeads, onTabCha
           },
         }),
       ]),
-    [t, selectedLeads],
+    [t],
   );
 
   return (
     <>
       <div className="mb-5 flex justify-between">
-        {/* <DataView.RecordsCount /> */}
-        <span />
-        <div className="flex gap-4">
-          <DataView.FiltersToggle />
-          <Button
-            onClick={() => deleteLeads()}
-            disabled={selectedLeads.length === 0}
-          >
-            {t('common.deleteSelected')}
-          </Button>
-        </div>
+        <DataView.RecordsCount />
       </div>
-      <DataView.Filters hasToggle>
-        <LeadsListFilters />
-      </DataView.Filters>
-
-
-      <Tabs
-        tabs={tabs}
-        selectedTab={selectedTab}
-        setSelectedTab={changeTab}
-        listBorderClassName="mb-4"
-      />
+      <Button
+        onClick={() => console.log('delete', selectedLeads)}
+        disabled={selectedLeads.size === 0}
+        className="mb-1"
+      >
+        {t('common.deleteSelected')}
+      </Button>
 
       <DataView.Table columns={columns} onRowClick={handleRowClick} />
     </>
   );
 };
 
-export default LeadsList;
+export default IncomingLeadsList;

@@ -1456,7 +1456,9 @@
   },
   "leads": {
     "addNew": "Neuen Lead erstellen ",
+    "deleteGroup": "Lead-Gruppe löschen?",
     "detailPageLabel": "Leadverwaltung",
+    "incoming": "Eingehende Leads",
     "pageLabel": "Lead Management für"
   },
   "login": {

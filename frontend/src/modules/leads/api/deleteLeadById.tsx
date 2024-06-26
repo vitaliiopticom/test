@@ -1,8 +1,10 @@
 import { gql, MutationHookOptions, useMutation } from '@/api';
 
 export const DELETE_LEAD_MUTATION = gql`
-  mutation DeleteLead(($id: UUID!) {
-    deleteLead(leadId: $id)
+  mutation DeleteLead($id: UUID!) {
+    deleteLead(leadId: $id) {
+      id
+    }
   }
 `;
 

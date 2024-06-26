@@ -27,10 +27,11 @@ const VehicleInfoModel = ({ vehicle, closeModal }: Props) => {
       isOpen
       // onClose={closeModal}
       title={`${t('common.vehicle')} ${t('lead.information')}`}
-      actions={[<Button className="min-w-[125px]" children={t('common.cancel')} onClick={closeModal} />]}
+      actions={[<Button key="cancel" className="min-w-[125px]" children={t('common.cancel')} onClick={closeModal} />]}
       className="container mx-auto p-4 w-11/12 max-w-screen-2xl"
     >
-      <div key={vehicle.id} className="grid grid-cols-3 gap-4">
+      <div className="flex flex-col w-full gap-4">
+      <div className="grid grid-cols-3 gap-4">
         {/* <img src={vehicle.image} alt={vehicleById.name} className="mr-4 h-24 w-24" /> */}
 
         <Image
@@ -91,19 +92,10 @@ const VehicleInfoModel = ({ vehicle, closeModal }: Props) => {
 
 
 
-            {/* <div className="font-bold">{vehicle.name}</div>
-            {!!vehicle.unitDetails[0].firstRegistration && <div>1st Regis. {format(vehicle.unitDetails[0].firstRegistration, 'do MMM yyyy')}</div>}
-            <div>Internal Reference (REF) {vehicle.unitDetails[0].referenceForAd}</div>
-            {!!vehicle.unitDetails[0].availableFromDate && <div>Date available {format(vehicle.unitDetails[0].availableFromDate, "do MMM yyyy")}</div>}
-            <div className={vehicle.unitDetails[0].available ? 'text-green-500' : 'text-red-500'}>
-              {vehicle.unitDetails[0].available ? t('lead.available') : t('lead.unavailable')}
-            </div>
-            <div className="flex flex-col basis-3/12 h-full">
-              <div className="font-bold">{vehicle.price.netPrice} € TTC</div>
-              <div className="justify-self-center">{vehicle.unitDetails[0].kilometers} km</div>
-            </div> */}
+            
           </div>
         </div>
+      </div>
       </div>
     </Modal>
   );
