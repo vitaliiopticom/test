@@ -1,9 +1,9 @@
 import { UserDetailSkeleton } from '@/modules/users/components/UserDetailSkeleton';
-import LeadDealership from '../../components/LeadDealership';
-import LeadDocument from '../../components/LeadDocument';
+// import LeadDealership from '../../components/LeadDealership';
+// import LeadDocument from '../../components/LeadDocument';
 import LeadHistory from '../../components/LeadHistory';
 import LeadInfo from '../../components/LeadInfo';
-import LeadSchedule from '../../components/LeadSchedule';
+// import LeadSchedule from '../../components/LeadSchedule';
 import LeadVehicleProposed from '../../components/LeadVehicleProposed';
 import { LeadData  } from '../../types/leadTypes';
 import { FC } from 'react';
