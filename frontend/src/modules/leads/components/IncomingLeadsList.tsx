@@ -22,8 +22,8 @@ import { differenceInSeconds } from 'date-fns';
 
 export const IncomingLeadsList: FC = () => {
   const { t } = useTranslation();
-  const [selectedLeads, setSelectedLeads] = useState<Set<string>>(new Set());
-  const [selectedLead, setSelectedLead] = useState<string>("");
+  // const [selectedLeads, setSelectedLeads] = useState<Set<string>>(new Set());
+  // const [selectedLead, setSelectedLead] = useState<string>("");
   const navigate = useNavigate();
 
   const handleRowClick = (lead: Lead) => {
@@ -34,7 +34,7 @@ export const IncomingLeadsList: FC = () => {
     () =>
       createTableColumns<Lead>((ch) => [
         ch.accessor('createdAt', {
-          header: () => t('optileads.time'),
+          header: () => t('lead.elapsedTime'),
           cell: ({ row }) => {
             const createdAt = new Date(row.original.createdAt);
             const timePassedInSeconds = differenceInSeconds(
@@ -125,13 +125,13 @@ export const IncomingLeadsList: FC = () => {
       <div className="mb-5 flex justify-between">
         <DataView.RecordsCount />
       </div>
-      <Button
+      {/* <Button
         onClick={() => console.log('delete', selectedLeads)}
         disabled={selectedLeads.size === 0}
         className="mb-1"
       >
         {t('common.deleteSelected')}
-      </Button>
+      </Button> */}
 
       <DataView.Table columns={columns} onRowClick={handleRowClick} />
     </>

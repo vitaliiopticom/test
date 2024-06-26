@@ -57,15 +57,22 @@ export const OptiLeadsPage: FC = () => {
   const handleClose = () => {
     createModal.onClose();
   };
-  const handleDeleteLeads = (id?: string) => { }
 
   const [createLead, createLeadState] = useCreateLeadMutation({
     onCompleted: handleClose,
   });
 
   const [deleteLead, deleteLeadState] = useDeleteLeadMutation({
-    onCompleted: handleClose,
+    onCompleted: deleteModal.onClose,
   });
+
+  const handleDeleteLeads = (id?: string) => {
+    deleteLead({
+      variables: {
+          leadId: selectedLeads[0].id
+      }
+    })
+  }
 
   const handleCreateLead = (values: CreateLeadFormValues) => {
     const { ...restValues } = values;
@@ -140,6 +147,7 @@ export const OptiLeadsPage: FC = () => {
               className="min-w-[125px]"
               children={t('common.delete')}
               onClick={() => handleDeleteLeads()}
+              disabled={deleteLeadState.loading}
             />,
             <Button
               key="cancel"
@@ -147,6 +155,7 @@ export const OptiLeadsPage: FC = () => {
               children={t('common.cancel')}
               onClick={() => deleteModal.onClose()}
               variant="secondary"
+              disabled={deleteLeadState.loading}
             />
           ]}
 

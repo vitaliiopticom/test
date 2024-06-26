@@ -38,7 +38,7 @@ export const useCreateLeadMutation = (
       onCompleted: (data, clientOptions) => {
         client.refetchQueries({ include: [LEADS_QUERY] });
         toast.success<string>(
-          t('notifications.successCreate', { name: t('common.lead') }),
+          t('notifications.successCreate', { name: 'Lead' }),
         );
         options?.onCompleted?.(data, clientOptions);
       },
