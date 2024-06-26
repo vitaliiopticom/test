@@ -41,7 +41,7 @@ export const IncomingLeadsList: FC = () => {
               new Date(),
               createdAt,
             );
-            const timeRemaining = 30 - timePassedInSeconds / 60;
+            const timeRemaining = Math.round(30 - timePassedInSeconds / 60);
             return (
               <CountdownTimer
                 key={row.original.id}
