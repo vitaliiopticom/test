@@ -10,6 +10,7 @@ import { formatDate } from '@/utils/date';
 type Props = {
   vehicle: VehicleDetails;
   closeModal: () => void;
+  image: string;
 }
 /**
  * Renders the vehicle information component.
@@ -18,7 +19,7 @@ type Props = {
  * @param {Object} props.vehicle - The vehicle object containing information.
  * @returns {JSX.Element} The rendered vehicle information component.
  */
-const VehicleInfoModel = ({ vehicle, closeModal }: Props) => {
+const VehicleInfoModel = ({ vehicle, closeModal, image }: Props) => {
   const { t } = useTranslation();
 
 
@@ -37,7 +38,7 @@ const VehicleInfoModel = ({ vehicle, closeModal }: Props) => {
           alt="alt"
           className="w-full"
           fallbackPath={FALLBACK_IMAGE}
-          src={vehicle?.firstImageDAT?.path || FALLBACK_IMAGE}
+          src={image || FALLBACK_IMAGE}
         />
 
 

@@ -79,7 +79,7 @@ const VehicleInfo = ({ vehicle }: Props) => {
         <div className="justify-self-center">{vehicleById.unitDetails[0].kilometers} km</div>
       </div>
     </div>
-    {isModalOpen && <VehicleInfoModel vehicle={vehicleById} closeModal={closeModal} />}
+    {isModalOpen && <VehicleInfoModel vehicle={vehicleById} closeModal={closeModal} image={image} />}
   </>);
 };
 
