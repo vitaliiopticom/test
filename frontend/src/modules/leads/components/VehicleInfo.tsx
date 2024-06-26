@@ -8,6 +8,7 @@ import { Image } from '@/components/elements';
 import { FALLBACK_IMAGE } from '@/common/constants'
 import { useState } from 'react';
 import VehicleInfoModel from './VehicleInfoModel';
+import { useGetVehiclesQuery } from '../api/getVehicleImageByVin';
 
 
 type Props = {
@@ -28,11 +29,27 @@ const VehicleInfo = ({ vehicle }: Props) => {
 
   const { data, loading } = useGetVehicleByIdQuery({
     variables: {
-      id: vehicle.vehicleId
+      id: vehicle.vehicleId,
     },
   });
-  const vehicleById: VehicleDetails = data?.vehicleById as VehicleDetails;
 
+  const { data: data2, loading: loading2 } = useGetVehiclesQuery({
+    variables: {
+      inputParameters: {
+        filterParameters: {
+          vIN: vehicle.vIN,
+        },
+        pagingParameters: {
+          pageIndex: 0,
+          pageSize: 1,
+        },
+      },
+    },
+  });
+
+  const vehicleById: any = data?.vehicleById;
+  const image =
+    data2?.vehicles.vehicles.items[0].detail.coverImage.image.thumbnailUri;
 
   const { t } = useTranslation();
   return loading ?<ProposedVehicleSkeleton /> : (
@@ -41,11 +58,11 @@ const VehicleInfo = ({ vehicle }: Props) => {
       {/* <img src={vehicle.image} alt={vehicleById.name} className="mr-4 h-24 w-24" /> */}
 
       <Image
-          alt="alt"
-          className="mr-4 h-24 w-24"
-          fallbackPath={FALLBACK_IMAGE}
-          src={vehicleById?.firstImageDAT?.path || FALLBACK_IMAGE}
-        />
+        alt="alt"
+        className="mr-4 h-24 w-24"
+        fallbackPath={FALLBACK_IMAGE}
+        src={image || FALLBACK_IMAGE}
+      />
 
 
       <div className="flex flex-col basis-9/12">
