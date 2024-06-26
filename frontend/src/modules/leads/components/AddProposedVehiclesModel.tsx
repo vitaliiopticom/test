@@ -44,8 +44,8 @@ export const AddProposedVehicleModel = ({ isLoading, refetch, closeModal, isOpen
     refetch();
   };
   const [addVehiclesToLead, addVehiclesToLeadState] = useAddVehiclesToLeadMutation({
-    onCompleted: handleClose,
-  });
+      onCompleted: handleClose,
+    });
 
   const handleCreate = () => {
     addVehiclesToLead({
@@ -55,7 +55,7 @@ export const AddProposedVehicleModel = ({ isLoading, refetch, closeModal, isOpen
           vehicles: selectedVehicles.map((v: any) => ({
             referenceForAd: '',
             vehicleId: v.id,
-            vIN: v.vin,
+            vIN: v.unitDetails[0].vIN,
           }))
         }
       },
@@ -130,7 +130,7 @@ export const AddProposedVehicleModel = ({ isLoading, refetch, closeModal, isOpen
       className="container mx-auto p-4 w-11/12 max-w-screen-2xl"
     >
       <QueryDataLoader query={vehiclesQuery} keepPreviousData useCustomLoading>
-
+        
         {({ data, isLoading, isRefetching }) => {
           if (!data || isLoading) {
             return <div>Loading...</div>; // or any other fallback UI
@@ -143,26 +143,26 @@ export const AddProposedVehicleModel = ({ isLoading, refetch, closeModal, isOpen
           // return <PaginationAdapter data={items || []} id="vehicles_to_add">
           //   {(pageData) => (
           return <DataView
-            data={vehicles}
-            // filterDefaultValues={VEHICLES_FILTER_DEFAULT}
-            id={OPTICONTENT_DATA_VIEW_ID}
-            isFetching={isRefetching}
-            isLoading={isLoading}
-            // recordsCount={5}
-            // onChange={handlePaginationAndFilterChange}
-            hidePagination
-          >
+              data={vehicles}
+              // filterDefaultValues={VEHICLES_FILTER_DEFAULT}
+              id={OPTICONTENT_DATA_VIEW_ID}
+              isFetching={isRefetching}
+              isLoading={isLoading}
+              // recordsCount={5}
+              // onChange={handlePaginationAndFilterChange}
+              hidePagination
+            >
             <AddProposedVehicleList onVehiclesAdd={(vehicle: any) => {
               if (!selectedVehicles.find(v => v.id === vehicle.id)) {
                 setSelectedVehicles(([...selectedVehicles, vehicle]));
-              } else {
+                  } else {
                 setSelectedVehicles(selectedVehicles.filter((v) => v.id !== vehicle.id));
-              }
-            }}
-              selectedVehicles={selectedVehicles}
-              isLoading={isLoading}
-            />
-          </DataView>
+                  }
+                }}
+                selectedVehicles={selectedVehicles}
+                isLoading={isLoading}
+              />
+            </DataView>
           //   )}
           // </PaginationAdapter>
         }}
