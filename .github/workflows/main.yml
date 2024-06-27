@@ -9,10 +9,10 @@ jobs:
       - name: Get the branch name
         id: get_branch
         run: |
-          BRANCH_NAME=${GITHUB_REF#refs/heads/}
-          echo ${GITHUB_REF}
-          TRANSFORMED_BRANCH_NAME=$(echo $BRANCH_NAME | tr '/' '_')
-          echo "TRANSFORMED_BRANCH_NAME=$TRANSFORMED_BRANCH_NAME" >> $GITHUB_ENV
+          TRANSFORMED_BRANCH_NAME=$(echo 'refs/heads/feature/opti_leads' | sed 's|refs/heads/||' | tr '/' '_' | tr '-' '_')
+          echo $TRANSFORMED_BRANCH_NAME
+          IMAGE_VERSION=$(date +'%Y.%m.%d')-$TRANSFORMED_BRANCH_NAME_nightly.${GITHUB_SHA::7}
+          echo "IMAGE_VERSION=IMAGE_VERSION" >> $GITHUB_ENV
       - name: Print transformed name
         run: |
-          echo "Transformed branch name: $(date +'%Y.%m.%d')-$TRANSFORMED_BRANCH_NAME_nightly.${GITHUB_SHA::7}"
+          echo "Transformed branch name: ${IMAGE_VERSION}"
