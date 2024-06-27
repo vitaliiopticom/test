@@ -11,9 +11,18 @@ jobs:
         run: |
           TRANSFORMED_BRANCH_NAME=$(echo 'refs/heads/feature/opti_leads' | sed 's|refs/heads/||' | tr '/' '_' | tr '-' '_')
           echo $TRANSFORMED_BRANCH_NAME
-          IMAGE_VERSION=$(date +'%Y.%m.%d')-${TRANSFORMED_BRANCH_NAME}_nightly.${GITHUB_SHA::7}
+          IMAGE_VERSION=$(date +'%Y.%m.%d')-${TRANSFORMED_BRANCH_NAME}.${SHORT_SHA}
           echo $IMAGE_VERSION
           echo "IMAGE_VERSION=$IMAGE_VERSION" >> $GITHUB_ENV
       - name: Print transformed name
         run: |
           echo "Transformed branch name: $IMAGE_VERSION"
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+
+      - name: Add tag
+        run: |
+          git tag ${{ env.IMAGE_VERSION }}
+          git push origin ${{ env.IMAGE_VERSION }}
