@@ -6,6 +6,8 @@ jobs:
   transform:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: Get the branch name
         id: get_branch
         run: |
@@ -21,7 +23,6 @@ jobs:
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
-
       - name: Add tag
         run: |
           git tag ${{ env.IMAGE_VERSION }}
