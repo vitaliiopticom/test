@@ -1,0 +1,17 @@
+name: Transform Branch Name
+
+on: workflow_dispatch
+
+jobs:
+  transform:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the branch name
+        id: get_branch
+        run: |
+          BRANCH_NAME=${GITHUB_REF#refs/heads/}
+          TRANSFORMED_BRANCH_NAME=$(echo $BRANCH_NAME | tr '/' '_')
+          echo "TRANSFORMED_BRANCH_NAME=$TRANSFORMED_BRANCH_NAME" >> $GITHUB_ENV
+      - name: Print transformed name
+        run: |
+          echo "Transformed branch name: $(date +'%Y.%m.%d')-$TRANSFORMED_BRANCH_NAME_nightly.${GITHUB_SHA::7}"
