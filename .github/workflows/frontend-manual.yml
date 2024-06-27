@@ -26,8 +26,6 @@ jobs:
       - name: Log in to Azure Container Registry
         run: |
           az acr login --name ${{ env.REGISTRY_NAME }}
-          pwd
-          ls -la
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -36,6 +34,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./frontend
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/arm64
           push: true
-          tags: ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          tags: ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:2024.06.27-feature_branch_name_nightly.${{ github.sha::8 }}
