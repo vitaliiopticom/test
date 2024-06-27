@@ -15,7 +15,7 @@ jobs:
         run: |
           TRANSFORMED_BRANCH_NAME=$(echo ${{ github.ref }} | sed 's|refs/heads/||' | tr '/' '_' | tr '-' '_')
           echo $TRANSFORMED_BRANCH_NAME
-          IMAGE_VERSION=${TRANSFORMED_BRANCH_NAME}-$(date +'%Y.%m.%d.%H.%M').${SHORT_SHA}
+          IMAGE_VERSION=${TRANSFORMED_BRANCH_NAME}-$(date +'%Y%m%d%H%M').${SHORT_SHA}
           echo $IMAGE_VERSION
           echo "IMAGE_VERSION=$IMAGE_VERSION" >> $GITHUB_ENV
       - name: Print transformed name
