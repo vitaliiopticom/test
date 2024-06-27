@@ -11,7 +11,8 @@ jobs:
         run: |
           TRANSFORMED_BRANCH_NAME=$(echo 'refs/heads/feature/opti_leads' | sed 's|refs/heads/||' | tr '/' '_' | tr '-' '_')
           echo $TRANSFORMED_BRANCH_NAME
-          IMAGE_VERSION=$(date +'%Y.%m.%d')-$TRANSFORMED_BRANCH_NAME_nightly.${GITHUB_SHA::7}
+          IMAGE_VERSION=$(date +'%Y.%m.%d')-${TRANSFORMED_BRANCH_NAME}_nightly.${GITHUB_SHA::7}
+          echo $IMAGE_VERSION
           echo "IMAGE_VERSION=$IMAGE_VERSION" >> $GITHUB_ENV
       - name: Print transformed name
         run: |
