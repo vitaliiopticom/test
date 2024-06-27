@@ -10,6 +10,7 @@ jobs:
         id: get_branch
         run: |
           BRANCH_NAME=${GITHUB_REF#refs/heads/}
+          echo ${GITHUB_REF}
           TRANSFORMED_BRANCH_NAME=$(echo $BRANCH_NAME | tr '/' '_')
           echo "TRANSFORMED_BRANCH_NAME=$TRANSFORMED_BRANCH_NAME" >> $GITHUB_ENV
       - name: Print transformed name
