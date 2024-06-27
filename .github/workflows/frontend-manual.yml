@@ -27,6 +27,9 @@ jobs:
         run: |
           az acr login --name ${{ env.REGISTRY_NAME }}
 
+      - name: Set env short sha
+        run: echo "SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-7)" >> $GITHUB_ENV
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -36,4 +39,4 @@ jobs:
           context: ./frontend
           platforms: linux/arm64
           push: true
-          tags: ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:2024.06.27-feature_branch_name_nightly.${{ github.sha::8 }}
+          tags: ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:2024.06.27-feature_branch_name_nightly.${{ env.SHORT_SHA }}
