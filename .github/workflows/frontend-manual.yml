@@ -31,9 +31,9 @@ jobs:
       - name: Get the branch name
         id: get_branch
         run: |
-          TRANSFORMED_BRANCH_NAME=$(echo 'refs/heads/feature/opti_leads' | sed 's|refs/heads/||' | tr '/' '_' | tr '-' '_')
+          TRANSFORMED_BRANCH_NAME=$(echo ${{ github.ref }} | sed 's|refs/heads/||' | tr '/' '_' | tr '-' '_')
           echo $TRANSFORMED_BRANCH_NAME
-          IMAGE_VERSION=${TRANSFORMED_BRANCH_NAME}-$(date +'%Y.%m.%d').${SHORT_SHA}
+          IMAGE_VERSION=${TRANSFORMED_BRANCH_NAME}-$(date +'%Y%m%d%H%M').${SHORT_SHA}
           echo $IMAGE_VERSION
           echo "IMAGE_VERSION=$IMAGE_VERSION" >> $GITHUB_ENV
       - name: Print transformed name
@@ -50,3 +50,11 @@ jobs:
           platforms: linux/arm64
           push: true
           tags: ${{ vars.REGISTRY_NAME }}.azurecr.io/${{ vars.IMAGE_NAME }}:${{ env.IMAGE_VERSION }}
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+      - name: Add tag
+        run: |
+          git tag -a ${{ env.IMAGE_VERSION }} -m "Tagging ${{ env.IMAGE_VERSION }}"
+          git push origin ${{ env.IMAGE_VERSION }}
