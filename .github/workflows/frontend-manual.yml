@@ -6,10 +6,6 @@ name: Node.js manual Build
 on:
   workflow_dispatch:
 
-env:
-  REGISTRY_NAME: acrcaropticomwesteuropedev002
-  IMAGE_NAME: caropticom-frontend
-
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -25,7 +21,7 @@ jobs:
 
       - name: Log in to Azure Container Registry
         run: |
-          az acr login --name ${{ env.REGISTRY_NAME }}
+          az acr login --name ${{ vars.REGISTRY_NAME }}
 
       - name: Set env short sha
         run: echo "SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-7)" >> $GITHUB_ENV
@@ -51,4 +47,4 @@ jobs:
           context: ./frontend
           platforms: linux/arm64
           push: true
-          tags: ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ env.IMAGE_VERSION }}
+          tags: ${{ vars.REGISTRY_NAME }}.azurecr.io/${{ vars.IMAGE_NAME }}:${{ env.IMAGE_VERSION }}
