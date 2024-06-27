@@ -10,6 +10,8 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
 
+    #If the current branch is not 'main', the job will run
+    if: github.ref != 'refs/heads/main'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
