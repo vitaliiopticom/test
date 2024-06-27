@@ -30,6 +30,18 @@ jobs:
       - name: Set env short sha
         run: echo "SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-7)" >> $GITHUB_ENV
 
+      - name: Get the branch name
+        id: get_branch
+        run: |
+          TRANSFORMED_BRANCH_NAME=$(echo 'refs/heads/feature/opti_leads' | sed 's|refs/heads/||' | tr '/' '_' | tr '-' '_')
+          echo $TRANSFORMED_BRANCH_NAME
+          IMAGE_VERSION=$(date +'%Y.%m.%d')-${TRANSFORMED_BRANCH_NAME}_nightly.${SHORT_SHA}
+          echo $IMAGE_VERSION
+          echo "IMAGE_VERSION=$IMAGE_VERSION" >> $GITHUB_ENV
+      - name: Print transformed name
+        run: |
+          echo "Transformed branch name: $IMAGE_VERSION"
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -39,4 +51,4 @@ jobs:
           context: ./frontend
           platforms: linux/arm64
           push: true
-          tags: ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:2024.06.27-feature_branch_name_nightly.${{ env.SHORT_SHA }}
+          tags: ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ env.IMAGE_VERSION }}
