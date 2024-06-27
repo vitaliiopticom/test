@@ -15,4 +15,4 @@ jobs:
           echo "IMAGE_VERSION=IMAGE_VERSION" >> $GITHUB_ENV
       - name: Print transformed name
         run: |
-          echo "Transformed branch name: ${env.IMAGE_VERSION}"
+          echo "Transformed branch name: ${{ env.IMAGE_VERSION }}"
