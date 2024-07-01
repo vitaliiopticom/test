@@ -1,17 +1,21 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-name: Node.js manual Build
+name: Front local manual Build
+run-name: ${{ github.actor }} is running manual local build
 
-on:
-  workflow_dispatch:
+on: workflow_dispatch
+
+permissions:
+  contents: write
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    environment: local
 
     #If the current branch is not 'main', the job will run
-    if: github.ref != 'refs/heads/main'
+    #    if: github.ref != 'refs/heads/main'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -28,12 +32,11 @@ jobs:
       - name: Set env short sha
         run: echo "SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-7)" >> $GITHUB_ENV
 
-      - name: Get the branch name
+      - name: Transform version
         id: get_branch
         run: |
-          TRANSFORMED_BRANCH_NAME=$(echo 'refs/heads/feature/opti_leads' | sed 's|refs/heads/||' | tr '/' '_' | tr '-' '_')
-          echo $TRANSFORMED_BRANCH_NAME
-          IMAGE_VERSION=$(date +'%Y.%m.%d')-${TRANSFORMED_BRANCH_NAME}.${SHORT_SHA}
+          TRANSFORMED_BRANCH_NAME=$(echo ${{ github.ref }} | sed 's|refs/heads/||' | tr '/' '_' | tr '-' '_')
+          IMAGE_VERSION=${TRANSFORMED_BRANCH_NAME}-$(date +'%Y%m%d%H%M').${SHORT_SHA}
           echo $IMAGE_VERSION
           echo "IMAGE_VERSION=$IMAGE_VERSION" >> $GITHUB_ENV
       - name: Print transformed name
@@ -43,10 +46,27 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
+      - name: Set up .env file
+        run: |
+          echo VITE_API_URL_PRIVATE=${{ vars.VITE_API_URL_PRIVATE }} > ./frontend/.env
+          echo VITE_API_URL_PUBLIC=${{ vars.VITE_API_URL_PUBLIC }} >> ./frontend/.env
+          echo VITE_TRANSLATIONS_URL=/locales >> ./frontend/.env
+          cat ./frontend/.env
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
           context: ./frontend
-          platforms: linux/arm64
+          platforms: linux/arm64,linux/amd64
           push: true
-          tags: ${{ vars.REGISTRY_NAME }}.azurecr.io/${{ vars.IMAGE_NAME }}:${{ env.IMAGE_VERSION }}
+          tags: ${{ vars.REGISTRY_NAME }}/${{ vars.IMAGE_NAME }}:${{ env.IMAGE_VERSION }}
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+
+      - name: Add tag
+        run: |
+          git tag -a ${{ env.IMAGE_VERSION }} -m "Tagging ${{ env.IMAGE_VERSION }}"
+          git push origin ${{ env.IMAGE_VERSION }}
